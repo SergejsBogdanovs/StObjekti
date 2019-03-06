@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.android.compileSdk
+
     defaultConfig {
         applicationId rootProject.application.id
         minSdkVersion rootProject.android.minSdk
@@ -13,6 +14,7 @@ android {
         versionName rootProject.application.versionName
         testInstrumentationRunner rootProject.application.testInstrumentationRunner
     }
+
     buildTypes {
         release {
             minifyEnabled false

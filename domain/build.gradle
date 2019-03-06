@@ -1,8 +1,27 @@
 apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+sourceCompatibility = rootProject.compiler.java
+targetCompatibility = rootProject.compiler.java
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.compiler.java
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.compiler.java
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.compiler.kotlin"
+
+    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
+
+    testImplementation "junit:junit:$rootProject.jUnitVersion"
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
