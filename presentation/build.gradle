@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.android.compileSdk
@@ -42,7 +43,7 @@ dependencies {
     implementation project(':data')
 
     // Kotlin
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.compiler.kotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.compiler.kotlin"
     implementation "androidx.core:core-ktx:$rootProject.androidKtxVersion"
 
     // UI
@@ -55,21 +56,29 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycleVersion"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.lifecycleVersion"
 
     // Room
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
 
-    // Dagger
-    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
-    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+//    // Dagger
+//    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+//    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+//    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+//    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+//    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
+    // Koin
+    implementation "org.koin:koin-androidx-viewmodel:$rootProject.koinVersion"
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCore"
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"

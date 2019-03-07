@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ST Objekti</string>
+
+    <!-- Messages-->
+    <string name="unknown_error">Unknown error</string>
+    <string name="empty_icon">¯\\\\_(ツ)_/¯</string>
+    <string name="list_empty">Sorry, we couldn\'t find any data</string>
+
 </resources>

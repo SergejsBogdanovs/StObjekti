@@ -25,12 +25,24 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
 
+    // Room
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
     // Kotlin
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.compiler.kotlin"
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
 
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCore"
+
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"
 }
+
+
+
+

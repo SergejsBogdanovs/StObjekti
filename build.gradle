@@ -31,7 +31,7 @@ buildscript {
 
         //Libraries
         materialVersion = '1.1.0-alpha04'
-        daggerVersion = '2.16'
+        //daggerVersion = '2.16'
         recyclerviewVersion = '1.1.0-alpha02'
         vectorDrawableVersion = '1.0.1'
         rxKotlinVersion = '2.3.+'
@@ -42,6 +42,8 @@ buildscript {
         androidKtxVersion = '1.0.1'
         stethoVersion = '1.5.0'
         timberVersion = '4.7.1'
+        firebaseCore = '16.0.7'
+        koinVersion = '1.0.2'
 
         // Testing
         jUnitVersion = '4.12'
@@ -52,12 +54,12 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$compiler.kotlin"
+        classpath 'com.google.gms:google-services:4.2.0'
     }
 }
 
