@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.android.compileSdk
@@ -78,7 +77,11 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
 
     // Firebase
-    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCore"
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCoreVersion"
+    implementation "com.google.firebase:firebase-database:$rootProject.firebaseDatabaseVersion"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"
@@ -87,3 +90,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
     androidTestImplementation "androidx.annotation:annotation:$rootProject.annotationVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'
+

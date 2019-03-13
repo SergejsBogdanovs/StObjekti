@@ -8,10 +8,10 @@ class GatewayMapper {
     fun toDomainModel(stObjectLocalModel: StObjectLocalModel) =  StObject(
         stObjectLocalModel.address,
         stObjectLocalModel.construction,
-        stObjectLocalModel.date_of_manufacture,
+        stObjectLocalModel.year_of_manufacture,
         stObjectLocalModel.in_service_from,
         stObjectLocalModel.name,
-        stObjectLocalModel.region_city,
+        stObjectLocalModel.city_region,
         stObjectLocalModel.technical_object,
         stObjectLocalModel.type,
         stObjectLocalModel.x,

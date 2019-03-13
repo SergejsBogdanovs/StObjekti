@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion rootProject.android.compileSdk
 
@@ -37,7 +38,12 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
 
     // Firebase
-    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCore"
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCoreVersion"
+    implementation "com.google.firebase:firebase-database:$rootProject.firebaseDatabaseVersion"
+    implementation "com.github.FrangSierra:RxFirebase:$rootProject.rxFirebaseVersion"
+
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"

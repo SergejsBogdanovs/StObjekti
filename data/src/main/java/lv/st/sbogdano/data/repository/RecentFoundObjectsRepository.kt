@@ -4,7 +4,7 @@ import io.reactivex.Observable
 import lv.st.sbogdano.data.local.dao.RecentObjectsDao
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 
-class RecentObjectsRepository(
+class RecentFoundObjectsRepository(
     private val recentObjectsDao: RecentObjectsDao
 ) {
 

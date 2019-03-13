@@ -7,27 +7,30 @@ import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
-import lv.st.sbogdano.domain.interactor.RecentObjectsGetAllUseCase
+import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
+import lv.st.sbogdano.domain.interactor.RecentFoundObjectsGetAllUseCase
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.internal.util.BaseAndroidViewModel
+import timber.log.Timber
 
 class StartupViewModel(
-    context: Context,
-    private val recentObjectsGetAllUseCase: RecentObjectsGetAllUseCase
+    private val context: Context,
+    private val recentFoundObjectsGetAllUseCase: RecentFoundObjectsGetAllUseCase,
+    private val getObjectByNameUseCase: GetObjectByNameUseCase
 ) : BaseAndroidViewModel(context.applicationContext as Application) {
-
-    private val context: Context = context
 
     val loading = ObservableBoolean()
     val error = ObservableField<String>()
     val empty = ObservableBoolean()
-    val result =  ObservableArrayList<StObject>()
+    val recentObjects = ObservableArrayList<StObject>()
+    val stObjects = ObservableArrayList<StObject>()
 
     fun loadRecentObjects() = addDisposable(findRecentObjects())
+    fun searchStObject(name: String) = addDisposable(findStObject(name))
 
     private fun findRecentObjects(): Disposable {
-        return recentObjectsGetAllUseCase.execute()
+        return recentFoundObjectsGetAllUseCase.execute()
             .subscribeWith(object : DisposableObserver<List<StObject>>() {
                 override fun onStart() {
                     loading.set(true)
@@ -36,8 +39,8 @@ class StartupViewModel(
 
                 override fun onNext(t: List<StObject>) {
                     loading.set(false)
-                    result.clear()
-                    result.addAll(t)
+                    recentObjects.clear()
+                    recentObjects.addAll(t)
                     empty.set(t.isEmpty())
                 }
 
@@ -51,5 +54,21 @@ class StartupViewModel(
             })
     }
 
+    private fun findStObject(name: String): Disposable {
+        return getObjectByNameUseCase.execute(name)
+            .subscribeWith(object : DisposableObserver<List<StObject>>() {
+
+                override fun onNext(t: List<StObject>) {
+                    Timber.v(t.toString())
+                    stObjects.addAll(t)
+                }
+
+                override fun onComplete() {
+                }
+
+                override fun onError(e: Throwable) {
+                }
+            })
+    }
 
 }

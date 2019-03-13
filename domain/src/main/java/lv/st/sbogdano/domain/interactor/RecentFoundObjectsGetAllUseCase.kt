@@ -6,7 +6,7 @@ import lv.st.sbogdano.domain.Schedulers
 import lv.st.sbogdano.domain.gateway.Gateway
 import lv.st.sbogdano.domain.model.StObject
 
-class RecentObjectsGetAllUseCase(
+class RecentFoundObjectsGetAllUseCase(
     schedulers: Schedulers,
     private val gateway: Gateway
 ) : ObservableUseCase<Unit, List<StObject>>(schedulers){
