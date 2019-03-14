@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -10,67 +9,70 @@
             name="viewModel"
             type="lv.st.sbogdano.stobjekti.startup.StartupViewModel" />
 
-        <import type="java.lang.Integer" />
+        <variable
+            name="stobjectCallbacks"
+            type="lv.st.sbogdano.stobjekti.startup.adapter.StObjectListAdapter.Callbacks"/>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".startup.StartupActivity">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/input_search"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="0dp"
-            android:layout_height="51dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toStartOf="@+id/btn_search"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btn_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Search"
+            android:clickable="true"
+            android:focusable="true"
+            android:queryHint="Objekta nosaukums"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/input_search" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.33" />
+            app:layout_constraintGuide_percent="0.4" />
 
         <ImageView
             android:id="@+id/st_logo"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/input_search"
-            app:layout_constraintEnd_toEndOf="@+id/btn_search"
-            app:layout_constraintStart_toStartOf="@+id/input_search"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/search"
+            app:layout_constraintEnd_toEndOf="@+id/search"
+            app:layout_constraintStart_toStartOf="@+id/search"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[2]" />
+            app:srcCompat="@drawable/sadales" />
 
-        <TextView
-            android:id="@+id/object"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@{Integer.toString(viewModel.stObjects.size)}"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/st_objects"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:fadeView="@{!viewModel.loading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:stobjectAdapter="@{viewModel.result}"
+            app:stobjectCallbacks="@{stobjectCallbacks}"
+            app:showLongMessage="@{viewModel.error}"
+            tools:listitem="@layout/stobject_list_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
