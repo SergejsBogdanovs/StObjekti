@@ -51,7 +51,7 @@ class StartupActivity : AppCompatActivity(), StObjectListAdapter.Callbacks {
     }
 
     override fun onItemClick(view: View, item: StObject) {
-
+        navigator.navigateToObjectDetails(this@StartupActivity, item)
     }
 }
 

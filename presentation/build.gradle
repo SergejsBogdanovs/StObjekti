@@ -89,6 +89,7 @@ dependencies {
     // Instrumentation tests
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
     androidTestImplementation "androidx.annotation:annotation:$rootProject.annotationVersion"
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

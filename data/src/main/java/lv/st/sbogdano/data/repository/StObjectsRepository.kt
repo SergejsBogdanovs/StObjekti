@@ -4,12 +4,13 @@ import com.google.firebase.database.DatabaseReference
 import durdinapps.rxfirebase2.DataSnapshotMapper
 import durdinapps.rxfirebase2.RxFirebaseDatabase
 import io.reactivex.Observable
-import lv.st.sbogdano.data.repository.mapper.StObjectsListMapper
 import lv.st.sbogdano.domain.model.StObject
 
 class StObjectsRepository(private val remoteStObjectsDatabase: DatabaseReference) {
 
     fun getObject(name: String?): Observable<List<StObject>>{
+
+        val str = name?.substringBefore("\\d+")
 
         val result =
             RxFirebaseDatabase.observeSingleValueEvent(

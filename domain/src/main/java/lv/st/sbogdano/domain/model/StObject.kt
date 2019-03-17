@@ -1,5 +1,7 @@
 package lv.st.sbogdano.domain.model
 
+import java.io.Serializable
+
 data class StObject(
     var address: String = "",
     var construction: String = "",
@@ -11,4 +13,4 @@ data class StObject(
     var type: String = "",
     var x: String = "",
     var y: String = ""
-)
+) : Serializable

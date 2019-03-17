@@ -57,15 +57,26 @@ class StartupViewModel(
         return getObjectByNameUseCase.execute(name)
             .subscribeWith(object : DisposableObserver<List<StObject>>() {
 
-                override fun onNext(t: List<StObject>) {
-                    Timber.v(t.toString())
-                    result.addAll(t)
+                override fun onStart() {
+                    super.onStart()
+                    loading.set(true)
+                    empty.set(false)
                 }
 
-                override fun onComplete() {
+                override fun onNext(t: List<StObject>) {
+                    Timber.v(t.toString())
+                    loading.set(false)
+                    result.clear()
+                    result.addAll(t.distinctBy { it.technical_object }.distinctBy { it.city_region }.distinctBy { it.address })
+                    empty.set(t.isEmpty())
                 }
 
                 override fun onError(e: Throwable) {
+                    loading.set(false)
+                    error.set(e.localizedMessage ?: e.message ?: context.getString(R.string.unknown_error))
+                }
+
+                override fun onComplete() {
                 }
             })
     }
