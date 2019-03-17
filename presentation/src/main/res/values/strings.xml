@@ -10,4 +10,6 @@
     <string name="list_empty">Sorry, we couldn\'t find any data</string>
     <string name="drive_btn_label">Drive</string>
 
+    <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
+
 </resources>

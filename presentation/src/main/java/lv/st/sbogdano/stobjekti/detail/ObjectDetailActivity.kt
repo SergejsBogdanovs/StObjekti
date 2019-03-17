@@ -4,17 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
+import lv.st.sbogdano.stobjekti.databinding.ActivityObjectDetailBinding
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
+import lv.st.sbogdano.stobjekti.internal.util.lksToLatLon
 import lv.st.sbogdano.stobjekti.navigation.Navigator
 import org.koin.android.ext.android.inject
 
-class ObjectDetailActivity : AppCompatActivity() {
+class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private val navigator: Navigator by inject()
 
-    private val binder by lazyThreadSafetyNone<lv.st.sbogdano.stobjekti.databinding.ActivityObjectDetailBinding> {
+    lateinit var stObject: StObject
+
+    private val binder by lazyThreadSafetyNone<ActivityObjectDetailBinding> {
         DataBindingUtil.setContentView(this, R.layout.activity_object_detail)
     }
 
@@ -23,9 +30,21 @@ class ObjectDetailActivity : AppCompatActivity() {
 
         setupToolbar()
 
-        val stObject = navigator.getStObject(this)
+        stObject = navigator.getStObject(this) as StObject
 
-        binder.stObject = stObject as StObject
+        binder.stObject = stObject
+
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
+        mapFragment?.getMapAsync(this)
+    }
+
+    override fun onMapReady(map: GoogleMap?) {
+        val coordinates = lksToLatLon(stObject.x.toDouble(), stObject.y.toDouble())
+        val latLng = LatLng(coordinates[0], coordinates[1])
+        map?.addMarker(MarkerOptions()
+                .position(latLng)
+                .title(stObject.name))
+        map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f))
     }
 
     private fun setupToolbar() {
