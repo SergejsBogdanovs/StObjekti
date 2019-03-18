@@ -1,6 +1,7 @@
-package lv.st.sbogdano.domain
+package lv.st.sbogdano.domain.usecases
 
 import io.reactivex.Observable
+import lv.st.sbogdano.domain.Schedulers
 
 /**
  * A base class for an use case that will be executed by presentation layer

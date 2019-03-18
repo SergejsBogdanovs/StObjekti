@@ -30,8 +30,9 @@ buildscript {
         ]
 
         //Libraries
+        multidexVersion = '2.0.1'
         materialVersion = '1.1.0-alpha04'
-        //daggerVersion = '2.16'
+        appCompatVersion = '1.1.0-alpha02'
         recyclerviewVersion = '1.1.0-alpha02'
         vectorDrawableVersion = '1.0.1'
         rxKotlinVersion = '2.3.+'

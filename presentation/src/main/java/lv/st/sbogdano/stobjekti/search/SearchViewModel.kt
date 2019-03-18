@@ -6,7 +6,9 @@ import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import io.reactivex.disposables.Disposable
+import io.reactivex.observers.DisposableCompletableObserver
 import io.reactivex.observers.DisposableObserver
+import lv.st.sbogdano.domain.interactor.AddToRecentFoundObjectsUseCase
 import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
 import lv.st.sbogdano.domain.interactor.RecentFoundObjectsGetAllUseCase
 import lv.st.sbogdano.domain.model.StObject
@@ -17,7 +19,8 @@ import timber.log.Timber
 class SearchViewModel(
     private val context: Context,
     private val recentFoundObjectsGetAllUseCase: RecentFoundObjectsGetAllUseCase,
-    private val getObjectByNameUseCase: GetObjectByNameUseCase
+    private val getObjectByNameUseCase: GetObjectByNameUseCase,
+    private val addToRecentFoundObjectsUseCase: AddToRecentFoundObjectsUseCase
 ) : BaseAndroidViewModel(context.applicationContext as Application) {
 
     val loading = ObservableBoolean()
@@ -27,6 +30,7 @@ class SearchViewModel(
 
     fun loadRecentObjects() = addDisposable(findRecentObjects())
     fun searchStObject(name: String) = addDisposable(findStObject(name))
+    fun addToRecentObjects(item: StObject) = addDisposable(addToRecentFoundObjects(item))
 
     private fun findRecentObjects(): Disposable {
         return recentFoundObjectsGetAllUseCase.execute()
@@ -81,4 +85,14 @@ class SearchViewModel(
             })
     }
 
+    private fun addToRecentFoundObjects(item: StObject): Disposable {
+        return addToRecentFoundObjectsUseCase.execute(item)
+            .subscribeWith(object : DisposableCompletableObserver() {
+                override fun onComplete() {
+                }
+
+                override fun onError(e: Throwable) {
+                }
+            })
+    }
 }

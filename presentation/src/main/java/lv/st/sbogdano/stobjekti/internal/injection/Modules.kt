@@ -7,6 +7,7 @@ import lv.st.sbogdano.data.repository.RecentFoundObjectsRepository
 import lv.st.sbogdano.data.repository.StObjectsRepository
 import lv.st.sbogdano.domain.Schedulers
 import lv.st.sbogdano.domain.gateway.Gateway
+import lv.st.sbogdano.domain.interactor.AddToRecentFoundObjectsUseCase
 import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
 import lv.st.sbogdano.domain.interactor.RecentFoundObjectsGetAllUseCase
 import lv.st.sbogdano.stobjekti.internal.schedulers.AppSchedulers
@@ -36,11 +37,13 @@ val domainModule = module {
     single { RecentFoundObjectsGetAllUseCase(get(), get()) }
 
     single { GetObjectByNameUseCase(get(), get()) }
+
+    single { AddToRecentFoundObjectsUseCase(get(), get()) }
 }
 
 val presentationModule = module {
 
-    viewModel { SearchViewModel(androidContext(), get(), get()) }
+    viewModel { SearchViewModel(androidContext(), get(), get(), get()) }
 
     single { Navigator() }
 }

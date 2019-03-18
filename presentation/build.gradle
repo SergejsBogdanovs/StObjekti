@@ -13,6 +13,7 @@ android {
         versionCode rootProject.application.versionCode
         versionName rootProject.application.versionName
         testInstrumentationRunner rootProject.application.testInstrumentationRunner
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -46,6 +47,7 @@ dependencies {
     implementation "androidx.core:core-ktx:$rootProject.androidKtxVersion"
 
     // UI
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
     implementation "androidx.vectordrawable:vectordrawable:$rootProject.vectorDrawableVersion"
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerviewVersion"
@@ -55,22 +57,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycleVersion"
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.lifecycleVersion"
 
     // Room
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
 
-//    // Dagger
-//    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
-//    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
-//    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
-//    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-//    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
-
     // Koin
     implementation "org.koin:koin-androidx-viewmodel:$rootProject.koinVersion"
+
+    // Multidex
+    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
@@ -82,6 +78,9 @@ dependencies {
 
     // Timber
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // Stetho
+    implementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"

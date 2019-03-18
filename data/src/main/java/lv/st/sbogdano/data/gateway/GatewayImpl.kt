@@ -1,5 +1,6 @@
 package lv.st.sbogdano.data.gateway
 
+import io.reactivex.Completable
 import io.reactivex.Observable
 import lv.st.sbogdano.data.gateway.mapper.GatewayMapper
 import lv.st.sbogdano.data.repository.RecentFoundObjectsRepository
@@ -19,7 +20,12 @@ class GatewayImpl(
             .doOnError { println("Getting recent objects error") }
             .map { it.map { stObjectLocalModel -> mapper.toDomainModel(stObjectLocalModel) } }
 
+    override fun addToRecentFoundObjects(params: StObject): Completable =
+        recentFoundObjectsRepository.add(mapper.toLocalModel(params))
+            .doOnError { println("Adding objects error") }
+
     override fun getStObjects(params: String?): Observable<List<StObject>> =
         stObjectsRepository.getObject(params)
             .doOnError { throwable -> println(throwable.message.toString()) }
+
 }

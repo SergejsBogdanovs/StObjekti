@@ -53,6 +53,7 @@ class SearchActivity : AppCompatActivity(), StObjectListAdapter.Callbacks {
 
     override fun onItemClick(view: View, item: StObject) {
         navigator.navigateToObjectDetails(this@SearchActivity, item)
+        viewModel.addToRecentObjects(item)
     }
 }
 
