@@ -1,4 +1,4 @@
-package lv.st.sbogdano.stobjekti.startup.adapter
+package lv.st.sbogdano.stobjekti.search.adapter
 
 import android.view.LayoutInflater
 import android.view.View

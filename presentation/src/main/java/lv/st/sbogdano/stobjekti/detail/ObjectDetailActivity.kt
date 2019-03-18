@@ -31,7 +31,6 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         setupToolbar()
 
         stObject = navigator.getStObject(this) as StObject
-
         binder.stObject = stObject
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment

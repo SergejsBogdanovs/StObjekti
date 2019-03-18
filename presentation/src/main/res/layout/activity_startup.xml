@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="lv.st.sbogdano.stobjekti.startup.StartupViewModel" />
+            type="lv.st.sbogdano.stobjekti.search.SearchViewModel" />
 
         <variable
             name="stobjectCallbacks"
-            type="lv.st.sbogdano.stobjekti.startup.adapter.StObjectListAdapter.Callbacks"/>
+            type="lv.st.sbogdano.stobjekti.search.adapter.StObjectListAdapter.Callbacks"/>
 
     </data>
 

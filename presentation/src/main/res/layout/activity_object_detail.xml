@@ -218,7 +218,6 @@
             app:layout_constraintTop_toTopOf="@+id/in_service_from_label"
             tools:text="30.10.2008" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

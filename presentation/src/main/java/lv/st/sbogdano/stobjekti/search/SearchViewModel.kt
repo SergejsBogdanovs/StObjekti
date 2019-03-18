@@ -1,4 +1,4 @@
-package lv.st.sbogdano.stobjekti.startup
+package lv.st.sbogdano.stobjekti.search
 
 import android.app.Application
 import android.content.Context
@@ -14,7 +14,7 @@ import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.internal.util.BaseAndroidViewModel
 import timber.log.Timber
 
-class StartupViewModel(
+class SearchViewModel(
     private val context: Context,
     private val recentFoundObjectsGetAllUseCase: RecentFoundObjectsGetAllUseCase,
     private val getObjectByNameUseCase: GetObjectByNameUseCase
