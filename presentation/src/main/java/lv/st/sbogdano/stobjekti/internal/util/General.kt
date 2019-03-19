@@ -58,7 +58,7 @@ fun lksToLatLon(in_X: Double, in_Y: Double): Array<Double> {
     val CE4 = -((BL4 / (K0 * AZ4)) * BB4 * H4 / 2.0)
     val CJ4 = (BL4 / (K0 * AZ4)) * (BD4 * H4 / 24) * (-4 * BS4 + 9 * BR4 * (1 - BM4) + 12 * BM4)
     val CO4 =
-        -(BL4 / (K0 * AZ4)) * (BF4 * H4 / 720.0) * (8 * BU4 * (11 - 24 * BM4) - 12 * BT4 * (21 - 71 * BM4) + 15 * BS4 * (15 - 98 * BM4 + 15 * BO4) + 180 * BR4 * (5 * BM4 - 3 * BO4) + 360 * BO4)
+            -(BL4 / (K0 * AZ4)) * (BF4 * H4 / 720.0) * (8 * BU4 * (11 - 24 * BM4) - 12 * BT4 * (21 - 71 * BM4) + 15 * BS4 * (15 - 98 * BM4 + 15 * BO4) + 180 * BR4 * (5 * BM4 - 3 * BO4) + 360 * BO4)
     val CT4 = (BL4 / (K0 * AZ4)) * (BH4 * H4 / 40320.0) * (1385 + 3633 * BM4 + 4095 * BO4 + 1575 * BQ4)
     val CY4 = AR4 + CE4 + CJ4 + CO4 + CT4
     val CX4 = (CY4 / Math.PI) * 180
@@ -90,3 +90,5 @@ fun lksToLatLon(in_X: Double, in_Y: Double): Array<Double> {
 
     return arrayOf(lat, lon)
 }
+
+

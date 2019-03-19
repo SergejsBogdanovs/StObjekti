@@ -10,6 +10,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.ActivityObjectDetailBinding
+import lv.st.sbogdano.stobjekti.internal.util.driveToObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
 import lv.st.sbogdano.stobjekti.internal.util.lksToLatLon
 import lv.st.sbogdano.stobjekti.navigation.Navigator
@@ -27,11 +28,11 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setupToolbar()
 
         stObject = navigator.getStObject(this) as StObject
         binder.stObject = stObject
+        binder.drive.setOnClickListener { it.driveToObject(stObject) }
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)

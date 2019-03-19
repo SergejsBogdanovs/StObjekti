@@ -13,20 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="@string/google_maps_api_key" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api_key" />
 
-        <activity android:name=".search.SearchActivity"
-                  android:theme="@style/AppTheme.Launcher">
+        <activity
+            android:name=".search.SearchActivity"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<data android:scheme="geo" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
         </activity>
 
-        <activity android:name=".detail.ObjectDetailActivity">
-        </activity>
+        <activity android:name=".detail.ObjectDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@
 
         <variable
             name="stobjectCallbacks"
-            type="lv.st.sbogdano.stobjekti.search.adapter.StObjectListAdapter.Callbacks"/>
+            type="lv.st.sbogdano.stobjekti.search.adapter.StObjectListAdapter.Callbacks" />
 
     </data>
 
@@ -21,7 +21,7 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -67,11 +67,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/recent_found_label"
+            app:showLongMessage="@{viewModel.error}"
             app:stobjectAdapter="@{viewModel.result}"
             app:stobjectCallbacks="@{stobjectCallbacks}"
-            app:showLongMessage="@{viewModel.error}"
             tools:listitem="@layout/stobject_list_item" />
+
+        <TextView
+            android:id="@+id/recent_found_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/recent_found_objects"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

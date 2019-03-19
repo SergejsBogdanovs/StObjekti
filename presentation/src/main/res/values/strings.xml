@@ -8,8 +8,10 @@
     <string name="unknown_error">Unknown error</string>
     <string name="empty_icon">¯\\\\_(ツ)_/¯</string>
     <string name="list_empty">Sorry, we couldn\'t find any data</string>
-    <string name="drive_btn_label">Drive</string>
 
     <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
+
+    <string name="drive_btn_label">Braukt</string>
+    <string name="recent_found_objects">Nesen atrastie objekti</string>
 
 </resources>

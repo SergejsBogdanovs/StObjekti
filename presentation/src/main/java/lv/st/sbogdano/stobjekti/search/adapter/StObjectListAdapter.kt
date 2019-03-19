@@ -3,6 +3,7 @@ package lv.st.sbogdano.stobjekti.search.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import lv.st.sbogdano.domain.model.StObject
@@ -16,6 +17,7 @@ class StObjectListAdapter(
 
     interface Callbacks {
         fun onItemClick(view: View, item: StObject)
+        fun onDriveBtnClick(view: View, item: StObject)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,7 +36,7 @@ class StObjectListAdapter(
     inner class ViewHolder(val binding: StobjectListItemBinding) : RecyclerView.ViewHolder(binding.root){
         init {
             itemView.setOnClickListener { callback?.onItemClick(it, items[adapterPosition]) }
+            binding.driveBtn.setOnClickListener { callback?.onDriveBtnClick(it, items[adapterPosition]) }
         }
     }
-
 }
