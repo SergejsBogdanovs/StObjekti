@@ -24,7 +24,7 @@ class GatewayImpl(
         recentFoundObjectsRepository.add(mapper.toLocalModel(params))
             .doOnError { println("Adding objects error") }
 
-    override fun getStObjects(params: String?): Observable<List<StObject>> =
+    override fun getStObjects(params: String): Observable<List<StObject>> =
         stObjectsRepository.getObject(params)
             .doOnError { throwable -> println(throwable.message.toString()) }
 

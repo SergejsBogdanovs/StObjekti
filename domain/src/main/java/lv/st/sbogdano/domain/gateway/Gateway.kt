@@ -8,7 +8,7 @@ interface Gateway {
 
     fun getRecentStObjects(): Observable<List<StObject>>
 
-    fun getStObjects(params: String?): Observable<List<StObject>>
+    fun getStObjects(params: String): Observable<List<StObject>>
 
     fun addToRecentFoundObjects(params: StObject): Completable
 }

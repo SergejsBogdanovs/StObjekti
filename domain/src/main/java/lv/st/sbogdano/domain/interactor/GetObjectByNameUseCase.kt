@@ -12,6 +12,6 @@ class GetObjectByNameUseCase(
 ) : ObservableUseCase<String, List<StObject>>(schedulers) {
 
     override fun buildObservable(params: String?): Observable<List<StObject>> {
-        return gateway.getStObjects(params)
+        return gateway.getStObjects(params!!)
     }
 }

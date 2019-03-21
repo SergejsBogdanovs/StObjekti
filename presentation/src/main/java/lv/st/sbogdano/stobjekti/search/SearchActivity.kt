@@ -2,6 +2,7 @@ package lv.st.sbogdano.stobjekti.search
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
@@ -42,7 +43,7 @@ class SearchActivity : AppCompatActivity(), StObjectListAdapter.Callbacks {
 
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { viewModel.searchStObject(it) }
+                if (!query.isNullOrBlank()) viewModel.searchStObject(query) else nullOrBlankWarning()
                 return true
             }
 
@@ -50,6 +51,10 @@ class SearchActivity : AppCompatActivity(), StObjectListAdapter.Callbacks {
                 return false
             }
         })
+    }
+
+    private fun nullOrBlankWarning() {
+        Toast.makeText(this, "Lūdzu aizpildiet meklēšanas laukumu.", Toast.LENGTH_LONG).show()
     }
 
     override fun onItemClick(view: View, item: StObject) {

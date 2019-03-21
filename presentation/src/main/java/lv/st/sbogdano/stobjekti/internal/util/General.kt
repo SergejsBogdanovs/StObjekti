@@ -90,5 +90,3 @@ fun lksToLatLon(in_X: Double, in_Y: Double): Array<Double> {
 
     return arrayOf(lat, lon)
 }
-
-
