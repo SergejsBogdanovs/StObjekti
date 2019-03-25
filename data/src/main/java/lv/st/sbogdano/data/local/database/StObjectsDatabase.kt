@@ -8,7 +8,7 @@ import lv.st.sbogdano.data.local.dao.RecentObjectsDao
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 
 @Database(entities = [StObjectLocalModel::class], version = 1, exportSchema = false)
-abstract class StObjectsDatabase : RoomDatabase(){
+abstract class StObjectsDatabase : RoomDatabase() {
 
     abstract fun recentObjectsDao(): RecentObjectsDao
 

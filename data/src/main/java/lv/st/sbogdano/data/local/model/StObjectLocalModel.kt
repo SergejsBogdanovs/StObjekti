@@ -13,5 +13,6 @@ data class StObjectLocalModel(
     var technical_object: String,
     var type: String,
     var x: String,
-    var y: String
+    var y: String,
+    var created_at: Long? = System.currentTimeMillis()
 )

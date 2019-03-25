@@ -6,10 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_search.*
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.ActivitySearchBinding
+import lv.st.sbogdano.stobjekti.internal.util.databinding.ViewBindingAdapters
 import lv.st.sbogdano.stobjekti.internal.util.driveToObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
 import lv.st.sbogdano.stobjekti.navigation.Navigator
@@ -54,7 +57,8 @@ class SearchActivity : AppCompatActivity(), StObjectListAdapter.Callbacks {
     }
 
     private fun nullOrBlankWarning() {
-        Toast.makeText(this, "Lūdzu aizpildiet meklēšanas laukumu.", Toast.LENGTH_LONG).show()
+        val error = getString(R.string.empty_search_text_msg)
+        ViewBindingAdapters.showLongMessage(window.decorView, error)
     }
 
     override fun onItemClick(view: View, item: StObject) {

@@ -11,11 +11,9 @@ class StObjectsRepository(private val remoteStObjectsDatabase: DatabaseReference
 
     fun getObject(name: String): Observable<List<StObject>> {
 
-        val formattedName = getFormattedName(name)
-
         val result =
                 RxFirebaseDatabase.observeSingleValueEvent(
-                        remoteStObjectsDatabase.orderByChild("name").equalTo(formattedName),
+                        remoteStObjectsDatabase.orderByChild("name").equalTo(getFormattedName(name)),
                         DataSnapshotMapper.listOf(StObject::class.java))
                         .toObservable()
 

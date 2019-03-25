@@ -39,10 +39,9 @@
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.technical_object}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                tools:text="33082#TP-7271"/>
+                tools:text="33082#TP-7271" app:layout_constraintEnd_toStartOf="@+id/guideline2"/>
 
         <fragment
                 android:id="@+id/map"
@@ -52,11 +51,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/drive"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/in_service_from"/>
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" app:layout_constraintHorizontal_bias="1.0"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
         <Button
                 android:id="@+id/drive"
@@ -64,11 +62,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:text="Braukt"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toStartOf="@+id/guideline2"/>
 
         <TextView
                 android:id="@+id/address_label"
@@ -86,15 +83,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.address}"
                 app:layout_constraintBottom_toBottomOf="@+id/address_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.018"
                 app:layout_constraintStart_toEndOf="@+id/address_label"
                 app:layout_constraintTop_toTopOf="@+id/address_label"
                 app:layout_constraintVertical_bias="1.0"
-                tools:text="Ozolnieku skola, Slampes pagasts. Tukuma raj."/>
+                tools:text="Ozolnieku skola, Slampes pagasts. Tukuma raj."
+                app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"/>
 
         <TextView
                 android:id="@+id/city_region_label"
@@ -112,13 +107,12 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.city_region}"
                 app:layout_constraintBottom_toBottomOf="@+id/city_region_label"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/city_region_label"
                 app:layout_constraintTop_toTopOf="@+id/city_region_label"
-                tools:text="Tukuma nov."/>
+                tools:text="Tukuma nov." app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                android:layout_marginEnd="8dp"/>
 
         <TextView
                 android:id="@+id/construction_label"
@@ -136,15 +130,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.construction}"
                 app:layout_constraintBottom_toBottomOf="@+id/construction_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/construction_label"
                 app:layout_constraintTop_toTopOf="@+id/construction_label"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="Brīvgaisa vienstatņa balstā ar drošinātājslēdzi..."/>
+                tools:text="Brīvgaisa vienstatņa balstā ar drošinātājslēdzi..."
+                app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"/>
 
         <TextView
                 android:id="@+id/type_label"
@@ -162,13 +154,12 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.type}"
                 app:layout_constraintBottom_toBottomOf="@+id/type_label"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/type_label"
                 app:layout_constraintTop_toTopOf="@+id/type_label"
-                tools:text="Masta a.st. 20 kV"/>
+                tools:text="Masta a.st. 20 kV" app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                android:layout_marginEnd="8dp"/>
 
         <TextView
                 android:id="@+id/year_of_manufacture_label"
@@ -186,13 +177,11 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.year_of_manufacture}"
                 app:layout_constraintBottom_toBottomOf="@+id/year_of_manufacture_label"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/year_of_manufacture_label"
                 app:layout_constraintTop_toTopOf="@+id/year_of_manufacture_label"
-                tools:text="2008"/>
+                tools:text="2008" app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"/>
 
         <TextView
                 android:id="@+id/in_service_from_label"
@@ -210,13 +199,16 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="@{stObject.in_service_from}"
                 app:layout_constraintBottom_toBottomOf="@+id/in_service_from_label"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/in_service_from_label"
                 app:layout_constraintTop_toTopOf="@+id/in_service_from_label"
-                tools:text="30.10.2008"/>
+                tools:text="30.10.2008" app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                android:layout_marginEnd="8dp"/>
+        <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content" android:id="@+id/guideline2"
+                                                    android:orientation="vertical"
+                                                    app:layout_constraintGuide_percent="0.5"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
