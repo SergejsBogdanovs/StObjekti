@@ -8,6 +8,9 @@ import androidx.databinding.ObservableField
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableCompletableObserver
 import io.reactivex.observers.DisposableObserver
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import lv.st.sbogdano.domain.interactor.AddToRecentFoundObjectsUseCase
 import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
 import lv.st.sbogdano.domain.interactor.RecentFoundObjectsGetAllUseCase
@@ -16,7 +19,7 @@ import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.internal.util.BaseAndroidViewModel
 import timber.log.Timber
 
-class SearchViewModel(
+class StObjectsSearchViewModel(
     private val context: Context,
     private val recentFoundObjectsGetAllUseCase: RecentFoundObjectsGetAllUseCase,
     private val getObjectByNameUseCase: GetObjectByNameUseCase,
@@ -95,4 +98,5 @@ class SearchViewModel(
                 }
             })
     }
+
 }

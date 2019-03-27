@@ -16,7 +16,7 @@ interface RecentObjectsDao {
     fun addToRecentFoundObjects(stObjectLocalModel: StObjectLocalModel): Completable
 
     @Query("SELECT COUNT(*) FROM RecentStObjects")
-    fun getCount(): Observable<Int>
+    fun getCount(): Int
 
     @Delete
     fun delete(stObjectLocalModel: StObjectLocalModel): Completable

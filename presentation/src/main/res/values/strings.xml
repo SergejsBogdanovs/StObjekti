@@ -2,7 +2,7 @@
     <string name="app_name">ST Objekti</string>
 
     <!-- Search -->
-    <string name="search_hint">Search ST object</string>
+    <string name="search_hint">Piemēram as105, tp2030, sp10, fp31</string>
 
     <!-- Messages-->
     <string name="unknown_error">Unknown error</string>

@@ -12,7 +12,7 @@ import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
 import lv.st.sbogdano.domain.interactor.RecentFoundObjectsGetAllUseCase
 import lv.st.sbogdano.stobjekti.internal.schedulers.AppSchedulers
 import lv.st.sbogdano.stobjekti.navigation.Navigator
-import lv.st.sbogdano.stobjekti.search.SearchViewModel
+import lv.st.sbogdano.stobjekti.search.StObjectsSearchViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
@@ -43,7 +43,7 @@ val domainModule = module {
 
 val presentationModule = module {
 
-    viewModel { SearchViewModel(androidContext(), get(), get(), get()) }
+    viewModel { StObjectsSearchViewModel(androidContext(), get(), get(), get()) }
 
     single { Navigator() }
 }

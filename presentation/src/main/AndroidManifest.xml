@@ -17,19 +17,33 @@
             android:value="@string/google_maps_api_key" />
 
         <activity
-            android:name=".search.SearchActivity"
+            android:name=".main.MainActivity"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-
-                <!--<action android:name="android.intent.action.VIEW" />-->
-                <!--<data android:scheme="geo" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".search.StObjectsSearchActivity" />
         </activity>
 
-        <activity android:name=".detail.ObjectDetailActivity"></activity>
+        <activity
+            android:name=".search.StObjectsSearchActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <activity android:name=".detail.ObjectDetailActivity" />
+
+        <provider
+            android:name=".search.provider.StObjectsSuggestionProvider"
+            android:authorities="lv.st.sbogdano.stobjekti.search.provider.StObjectsSuggestionProvider" />
     </application>
 
 </manifest>

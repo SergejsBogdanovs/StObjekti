@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".search.StObjectsSearchActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="lv.st.sbogdano.stobjekti.search.StObjectsSearchViewModel" />
+
+        <variable
+            name="stobjectCallbacks"
+            type="lv.st.sbogdano.stobjekti.search.adapter.StObjectListAdapter.Callbacks" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/st_objects_rw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:scrollbars="none"
+            app:showLongMessage="@{viewModel.error}"
+            app:stobjectAdapter="@{viewModel.result}"
+            app:stobjectCallbacks="@{stobjectCallbacks}"
+            tools:listitem="@layout/stobject_list_item" />
+
+    </RelativeLayout>
+
+
+</layout>
