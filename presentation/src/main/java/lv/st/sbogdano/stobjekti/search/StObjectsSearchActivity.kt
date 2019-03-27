@@ -4,6 +4,7 @@ import android.app.SearchManager
 import android.content.Intent
 import android.os.Bundle
 import android.provider.SearchRecentSuggestions
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -32,7 +33,18 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
         super.onCreate(savedInstanceState)
         binder.viewModel = viewModelStObjects
         binder.stobjectCallbacks = this
+
+        setupToolbar()
+
         handleSearch()
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(binder.toolbar)
+        supportActionBar!!.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowTitleEnabled(false)
+        }
     }
 
     private fun handleSearch() {
@@ -47,18 +59,25 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
                             StObjectsSuggestionProvider.MODE).saveRecentQuery(query, null)
                 }
             }
-            Intent.ACTION_VIEW -> {
-                val selectedSuggestionRowId = intent.dataString
-            }
         }
     }
 
     override fun onItemClick(view: View, item: StObject) {
         navigator.navigateToObjectDetails(this@StObjectsSearchActivity, item)
-        //viewModelStObjects.addToRecentObjects(item)
     }
 
     override fun onDriveBtnClick(view: View, item: StObject) {
         view.driveToObject(item)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
