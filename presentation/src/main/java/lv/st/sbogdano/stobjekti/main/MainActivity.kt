@@ -13,17 +13,44 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
+    private val navigator: Navigator by inject()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //viewModel.loadRecentObjects()
+
+//        search.apply {
+//            isActivated = true
+//            onActionViewExpanded()
+//            clearFocus()
+//        }
+
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         search.apply {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
-            setIconifiedByDefault(false)
+            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
         }
+
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
     }
+
+    private fun nullOrBlankWarning() {
+        val error = getString(R.string.empty_search_text_msg)
+        ViewBindingAdapters.showLongMessage(window.decorView, error)
+    }
+
 }
 
 
