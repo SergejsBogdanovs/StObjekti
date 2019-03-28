@@ -3,21 +3,33 @@ package lv.st.sbogdano.data.repository
 import com.google.firebase.database.DatabaseReference
 import durdinapps.rxfirebase2.DataSnapshotMapper
 import durdinapps.rxfirebase2.RxFirebaseDatabase
+import io.reactivex.Maybe
 import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
+import lv.st.sbogdano.data.local.dao.StObjectsDao
+import lv.st.sbogdano.data.local.model.StObjectLocalModel
 import lv.st.sbogdano.data.utils.getFormattedName
-import lv.st.sbogdano.domain.model.StObject
 
-class StObjectsRepository(private val remoteStObjectsDatabase: DatabaseReference) {
+class StObjectsRepository(
+        private val remoteStObjectsDatabase: DatabaseReference,
+        private val localStObjectsDatabase: StObjectsDao) {
 
-    fun getObject(name: String): Observable<List<StObject>> {
+    fun getObject(name: String): Observable<List<StObjectLocalModel>> {
 
-        val result =
+        val local = localStObjectsDatabase.getAll(name)
+                .filter { !it.isEmpty() }
+
+        val remote =
                 RxFirebaseDatabase.observeSingleValueEvent(
                         remoteStObjectsDatabase.orderByChild("name").equalTo(getFormattedName(name)),
-                        DataSnapshotMapper.listOf(StObject::class.java))
-                        .toObservable()
+                        DataSnapshotMapper.listOf(StObjectLocalModel::class.java))
+                        .map { list -> list.distinctBy { it.technical_object }.distinctBy { it.city_region }.distinctBy { it.address } }
+                        .observeOn(Schedulers.newThread())
+                        .doOnSuccess { localStObjectsDatabase.insert(*it.toTypedArray()) }
 
-        return result
+        return Maybe.concat(local, remote)
+                .firstElement()
+                .toObservable()
     }
 
 }
