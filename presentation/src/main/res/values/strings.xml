@@ -11,8 +11,13 @@
 
     <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
 
-    <string name="drive_btn_label">Braukt</string>
-    <string name="recent_found_objects">Nesen atrastie objekti</string>
     <string name="empty_search_text_msg">Lūdzu aizpildiet meklēšanas laukumu.</string>
+    <string name="drive_btn_label">Braukt</string>
+    <string name="address_label">Adrese:</string>
+    <string name="city_region_label">Pilsēta/Reģions:</string>
+    <string name="construction_label">Konstrukcija:</string>
+    <string name="type_label">Tips:</string>
+    <string name="year_of_manufacture_label">Izbuves gads:</string>
+    <string name="in_service_from_label">Ekspluatacija no:</string>
 
 </resources>

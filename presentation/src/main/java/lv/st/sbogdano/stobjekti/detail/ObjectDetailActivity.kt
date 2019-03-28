@@ -38,6 +38,11 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment?.getMapAsync(this)
     }
 
+    private fun setupToolbar() {
+        setSupportActionBar(binder.toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+
     override fun onMapReady(map: GoogleMap?) {
         val coordinates = lksToLatLon(stObject.x.toDouble(), stObject.y.toDouble())
         val latLng = LatLng(coordinates[0], coordinates[1])
@@ -45,11 +50,6 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                 .position(latLng)
                 .title(stObject.name))
         map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f))
-    }
-
-    private fun setupToolbar() {
-        setSupportActionBar(binder.toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

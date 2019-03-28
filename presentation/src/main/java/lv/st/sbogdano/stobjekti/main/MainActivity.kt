@@ -24,11 +24,6 @@ class MainActivity : AppCompatActivity() {
             setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
         }
     }
-
-    private fun nullOrBlankWarning() {
-        val error = getString(R.string.empty_search_text_msg)
-        ViewBindingAdapters.showLongMessage(window.decorView, error)
-    }
 }
 
 
