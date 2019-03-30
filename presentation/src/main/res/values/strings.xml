@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ST Objekti</string>
+    <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
 
     <!-- Search -->
     <string name="search_hint">Piemēram as105, tp2030, sp10, fp31</string>
@@ -7,11 +8,10 @@
     <!-- Messages-->
     <string name="unknown_error">Unknown error</string>
     <string name="empty_icon">¯\\\\_(ツ)_/¯</string>
-    <string name="list_empty">Sorry, we couldn\'t find any data</string>
-
-    <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
-
+    <string name="list_empty">Objekts nav atrasts!</string>
     <string name="empty_search_text_msg">Lūdzu aizpildiet meklēšanas laukumu.</string>
+
+    <!-- Labels -->
     <string name="drive_btn_label">Braukt</string>
     <string name="address_label">Adrese:</string>
     <string name="city_region_label">Pilsēta/Reģions:</string>

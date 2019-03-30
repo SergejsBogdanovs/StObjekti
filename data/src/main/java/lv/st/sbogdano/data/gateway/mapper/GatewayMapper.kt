@@ -17,17 +17,4 @@ class GatewayMapper {
         stObjectLocalModel.x,
         stObjectLocalModel.y
     )
-
-    fun toLocalModel(stObjects: StObject): StObjectLocalModel = StObjectLocalModel(
-        stObjects.address,
-        stObjects.construction,
-        stObjects.year_of_manufacture,
-        stObjects.in_service_from,
-        stObjects.name,
-        stObjects.city_region,
-        stObjects.technical_object,
-        stObjects.type,
-        stObjects.x,
-        stObjects.y
-    )
 }

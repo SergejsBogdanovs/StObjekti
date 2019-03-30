@@ -4,7 +4,6 @@ import com.google.firebase.database.FirebaseDatabase
 import lv.st.sbogdano.data.gateway.GatewayImpl
 import lv.st.sbogdano.data.local.database.StObjectsDatabase
 import lv.st.sbogdano.data.repository.StObjectsRepository
-import lv.st.sbogdano.data.repository.mapper.StObjectsListMapper
 import lv.st.sbogdano.domain.Schedulers
 import lv.st.sbogdano.domain.gateway.Gateway
 import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase

@@ -11,7 +11,7 @@ import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.internal.util.BaseAndroidViewModel
-import timber.log.Timber
+import java.util.concurrent.TimeoutException
 
 class StObjectsSearchViewModel(
     private val context: Context,
@@ -38,13 +38,17 @@ class StObjectsSearchViewModel(
                 override fun onNext(t: List<StObject>) {
                     loading.set(false)
                     result.clear()
-                    result.addAll(t)
+                    result.addAll(t.distinctBy { it.technical_object }.distinctBy { it.city_region }.distinctBy { it.address })
                     empty.set(t.isEmpty())
                 }
 
                 override fun onError(e: Throwable) {
-                    loading.set(false)
-                    error.set(e.localizedMessage ?: e.message ?: context.getString(R.string.unknown_error))
+                    if (e is TimeoutException) {
+                        loading.set(false)
+                        empty.set(true)
+                    } else {
+                        error.set(e.localizedMessage ?: e.message ?: context.getString(R.string.unknown_error))
+                    }
                 }
 
                 override fun onComplete() {
