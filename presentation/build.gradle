@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion rootProject.android.compileSdk
@@ -76,6 +78,8 @@ dependencies {
     // Firebase
     implementation "com.google.firebase:firebase-core:$rootProject.firebaseCoreVersion"
     implementation "com.google.firebase:firebase-database:$rootProject.firebaseDatabaseVersion"
+    implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
+    implementation "com.google.firebase:firebase-perf:$rootProject.performanceVersion"
 
     // Timber
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
