@@ -80,6 +80,7 @@ dependencies {
     implementation "com.google.firebase:firebase-database:$rootProject.firebaseDatabaseVersion"
     implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
     implementation "com.google.firebase:firebase-perf:$rootProject.performanceVersion"
+    implementation "com.google.firebase:firebase-messaging:$rootProject.fcmVersion"
 
     // Timber
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"

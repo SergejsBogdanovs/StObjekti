@@ -50,6 +50,7 @@ buildscript {
         coroutinesVersion = '1.0.0'
         crashlyticsVersion = '2.9.9'
         performanceVersion = '16.2.4'
+        fcmVersion = '17.5.0'
 
         // Testing
         jUnitVersion = '4.12'
