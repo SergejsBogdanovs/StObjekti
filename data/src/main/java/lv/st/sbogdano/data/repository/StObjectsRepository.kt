@@ -19,6 +19,7 @@ class StObjectsRepository(
     fun getObject(name: String): Observable<List<StObjectLocalModel>> {
 
         val local = localStObjectsDatabase.getAll(getFormattedName(name))
+            .filter { !it.isEmpty() }
 
         val remote =
             RxFirebaseDatabase.observeSingleValueEvent(
