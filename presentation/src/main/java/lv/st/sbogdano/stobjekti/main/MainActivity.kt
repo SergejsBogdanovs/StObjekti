@@ -4,12 +4,8 @@ import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import kotlinx.android.synthetic.main.activity_main.*
 import lv.st.sbogdano.stobjekti.R
-import lv.st.sbogdano.stobjekti.internal.util.databinding.ViewBindingAdapters
-import lv.st.sbogdano.stobjekti.navigation.Navigator
-import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 

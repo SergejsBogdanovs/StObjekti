@@ -1,9 +1,10 @@
 package lv.st.sbogdano.data.local.dao
 
-import androidx.room.*
-import io.reactivex.Completable
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import io.reactivex.Maybe
-import io.reactivex.Observable
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 
 @Dao

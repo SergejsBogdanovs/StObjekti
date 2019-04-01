@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.detail.ObjectDetailActivity
-import lv.st.sbogdano.stobjekti.search.StObjectsSearchActivity
 
 class Navigator {
 

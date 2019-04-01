@@ -2,7 +2,6 @@ package lv.st.sbogdano.stobjekti.search
 
 import android.app.SearchManager
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.provider.SearchRecentSuggestions
 import android.view.MenuItem
