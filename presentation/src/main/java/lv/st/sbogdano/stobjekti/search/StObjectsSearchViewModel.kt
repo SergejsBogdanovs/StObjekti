@@ -14,8 +14,8 @@ import lv.st.sbogdano.stobjekti.internal.util.BaseAndroidViewModel
 import java.util.concurrent.TimeoutException
 
 class StObjectsSearchViewModel(
-    private val context: Context,
-    private val getObjectByNameUseCase: GetObjectByNameUseCase
+        private val context: Context,
+        private val getObjectByNameUseCase: GetObjectByNameUseCase
 ) : BaseAndroidViewModel(context.applicationContext as Application) {
 
     val loading = ObservableBoolean()
@@ -27,32 +27,33 @@ class StObjectsSearchViewModel(
 
     private fun findStObject(name: String): Disposable {
         return getObjectByNameUseCase.execute(name)
-            .subscribeWith(object : DisposableObserver<List<StObject>>() {
+                .subscribeWith(object : DisposableObserver<List<StObject>>() {
 
-                override fun onStart() {
-                    super.onStart()
-                    loading.set(true)
-                    empty.set(false)
-                }
-
-                override fun onNext(t: List<StObject>) {
-                    loading.set(false)
-                    result.clear()
-                    result.addAll(t.distinctBy { it.technical_object }.distinctBy { it.city_region }.distinctBy { it.address })
-                    empty.set(t.isEmpty())
-                }
-
-                override fun onError(e: Throwable) {
-                    if (e is TimeoutException) {
-                        loading.set(false)
-                        empty.set(true)
-                    } else {
-                        error.set(e.localizedMessage ?: e.message ?: context.getString(R.string.unknown_error))
+                    override fun onStart() {
+                        super.onStart()
+                        loading.set(true)
+                        empty.set(false)
                     }
-                }
 
-                override fun onComplete() {
-                }
-            })
+                    override fun onNext(t: List<StObject>) {
+                        loading.set(false)
+                        result.clear()
+                        result.addAll(t)
+                        empty.set(t.isEmpty())
+                    }
+
+                    override fun onError(e: Throwable) {
+                        if (e is TimeoutException) {
+                            loading.set(false)
+                            empty.set(true)
+                        } else {
+                            error.set(e.localizedMessage ?: e.message
+                            ?: context.getString(R.string.unknown_error))
+                        }
+                    }
+
+                    override fun onComplete() {
+                    }
+                })
     }
 }

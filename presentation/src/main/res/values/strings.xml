@@ -8,7 +8,7 @@
     <!-- Messages-->
     <string name="unknown_error">Unknown error</string>
     <string name="empty_icon">¯\\\\_(ツ)_/¯</string>
-    <string name="list_empty">Objekts nav atrasts!</string>
+    <string name="list_empty">Objekts nav atrasts! Pārbaudiet objekta nosaukumu vai interneta savienojumu.</string>
 
     <!-- Labels -->
     <string name="drive_btn_label">Braukt</string>
