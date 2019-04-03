@@ -9,6 +9,8 @@ import io.reactivex.schedulers.Schedulers
 import lv.st.sbogdano.data.local.dao.StObjectsDao
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 import lv.st.sbogdano.data.utils.getFormattedName
+import java.io.IOException
+import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
 class StObjectsRepository(
@@ -25,7 +27,8 @@ class StObjectsRepository(
             RxFirebaseDatabase.observeSingleValueEvent(
                 remoteStObjectsDatabase.orderByChild("name").equalTo(getFormattedName(name)),
                 DataSnapshotMapper.listOf(StObjectLocalModel::class.java))
-                .doOnComplete { throw TimeoutException() }
+                .timeout(10, TimeUnit.SECONDS)
+                .doOnComplete { throw IllegalArgumentException() }
                 .map { list ->
                     list.distinctBy { it.technical_object }.distinctBy { it.city_region }.distinctBy { it.address }
                 }

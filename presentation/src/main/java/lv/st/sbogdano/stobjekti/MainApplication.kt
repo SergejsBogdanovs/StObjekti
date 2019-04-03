@@ -7,6 +7,7 @@ import lv.st.sbogdano.stobjekti.internal.injection.*
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
 import timber.log.Timber.DebugTree
+import lv.st.sbogdano.stobjekti.internal.util.FirebaseDatabaseConnectionHandler
 
 class MainApplication : Application() {
 
@@ -17,6 +18,9 @@ class MainApplication : Application() {
 
         // Start Koin
         startKoin(this, appComponent)
+
+        // Manage firebase database connection when in background and foreground
+        registerActivityLifecycleCallbacks(FirebaseDatabaseConnectionHandler())
 
         Timber.plant(DebugTree())
 
