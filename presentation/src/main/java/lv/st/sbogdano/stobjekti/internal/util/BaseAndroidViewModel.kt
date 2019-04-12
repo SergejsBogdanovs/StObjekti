@@ -12,6 +12,7 @@ abstract class BaseAndroidViewModel(
 ) : AndroidViewModel(application) {
 
     private val compositeDisposable = CompositeDisposable()
+
     fun addDisposable(disposable: Disposable) {
         compositeDisposable += disposable
     }

@@ -11,8 +11,8 @@ import lv.st.sbogdano.stobjekti.internal.schedulers.AppSchedulers
 import lv.st.sbogdano.stobjekti.navigation.Navigator
 import lv.st.sbogdano.stobjekti.search.StObjectsSearchViewModel
 import org.koin.android.ext.koin.androidContext
-import org.koin.androidx.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 val dataModule = module {
 
