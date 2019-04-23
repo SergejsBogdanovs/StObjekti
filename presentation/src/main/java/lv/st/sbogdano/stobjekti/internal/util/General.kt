@@ -2,7 +2,7 @@ package lv.st.sbogdano.stobjekti.internal.util
 
 fun <T> lazyThreadSafetyNone(initializer: () -> T): Lazy<T> = lazy(LazyThreadSafetyMode.NONE, initializer)
 
-fun lksToLatLon(in_X: Double, in_Y: Double): Array<Double> {
+fun lksToLatLng(in_X: Double, in_Y: Double): Array<Double> {
 
 // konstantes
     val n1 = 0.00167922038638372
@@ -77,16 +77,13 @@ fun lksToLatLon(in_X: Double, in_Y: Double): Array<Double> {
     val EZ4 = Math.abs((FA4 - EX4 - (EY4 / 60.0)) * 3600)
 
     // rezultata v&#275;rt&#299;bu pie&#353;&#311;ir&#353;ana
-    val out_nBDeg = CU4
-    val out_nBMin = CV4
     val out_dBSec = Math.round(CW4 * 100.0) / 100.0
 
-    val out_nLDeg = EX4
     val out_nLMin = EY4
     val out_dLSec = Math.round(EZ4 * 100.0) / 100.0
 
-    val lat = out_nBDeg + (out_nBMin * 60 + out_dBSec) / 3600
-    val lon = out_nLDeg + (out_nLMin * 60 + out_dLSec) / 3600
+    val lat = CU4 + (CV4 * 60 + out_dBSec) / 3600
+    val lon = EX4 + (out_nLMin * 60 + out_dLSec) / 3600
 
     return arrayOf(lat, lon)
 }

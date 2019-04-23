@@ -54,7 +54,6 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
                 intent.getStringExtra(SearchManager.QUERY)?.also { query ->
                     viewModelStObjects.searchStObject(query)
 
-
                     SearchRecentSuggestions(this,
                             StObjectsSuggestionProvider.AUTHORITY,
                             StObjectsSuggestionProvider.MODE).saveRecentQuery(query, null)
@@ -80,5 +79,4 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

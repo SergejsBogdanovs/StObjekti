@@ -10,8 +10,8 @@ import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.StobjectListItemBinding
 
 class StObjectListAdapter(
-        private val items: List<StObject>,
-        private val callback: Callbacks?
+    private val items: List<StObject>,
+    private val callback: Callbacks?
 ) : RecyclerView.Adapter<StObjectListAdapter.ViewHolder>() {
 
     interface Callbacks {
@@ -32,7 +32,7 @@ class StObjectListAdapter(
         holder.binding.executePendingBindings()
     }
 
-    inner class ViewHolder(val binding: StobjectListItemBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(val binding: StobjectListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener { callback?.onItemClick(it, items[adapterPosition]) }
             binding.driveBtn.setOnClickListener { callback?.onDriveBtnClick(it, items[adapterPosition]) }

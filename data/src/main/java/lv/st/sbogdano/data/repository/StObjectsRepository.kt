@@ -9,9 +9,7 @@ import io.reactivex.schedulers.Schedulers
 import lv.st.sbogdano.data.local.dao.StObjectsDao
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 import lv.st.sbogdano.data.utils.getFormattedName
-import java.io.IOException
 import java.util.concurrent.TimeUnit
-import java.util.concurrent.TimeoutException
 
 class StObjectsRepository(
     private val remoteStObjectsDatabase: DatabaseReference,
@@ -21,7 +19,7 @@ class StObjectsRepository(
     fun getObject(name: String): Observable<List<StObjectLocalModel>> {
 
         val local = localStObjectsDatabase.getAll(getFormattedName(name))
-            .filter { !it.isEmpty() }
+            .filter { it.isNotEmpty() }
 
         val remote =
             RxFirebaseDatabase.observeSingleValueEvent(
@@ -39,5 +37,4 @@ class StObjectsRepository(
             .firstElement()
             .toObservable()
     }
-
 }

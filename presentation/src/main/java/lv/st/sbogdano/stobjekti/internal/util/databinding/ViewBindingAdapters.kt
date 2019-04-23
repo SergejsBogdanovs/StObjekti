@@ -4,7 +4,6 @@ import android.view.View
 import androidx.databinding.BindingAdapter
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
-import lv.st.sbogdano.stobjekti.internal.util.fade
 
 object ViewBindingAdapters {
 
@@ -23,5 +22,4 @@ object ViewBindingAdapters {
     fun goneUnless(view: View, visible: Boolean) {
         view.visibility = if (visible) View.VISIBLE else View.GONE
     }
-
 }

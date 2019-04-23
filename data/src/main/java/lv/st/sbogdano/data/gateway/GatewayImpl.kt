@@ -7,7 +7,7 @@ import lv.st.sbogdano.domain.gateway.Gateway
 import lv.st.sbogdano.domain.model.StObject
 
 class GatewayImpl(
-        private val stObjectsRepository: StObjectsRepository
+    private val stObjectsRepository: StObjectsRepository
 ) : Gateway {
 
     private val mapper = GatewayMapper()
@@ -16,5 +16,4 @@ class GatewayImpl(
             stObjectsRepository.getObject(params)
                     .doOnError { throwable -> println(throwable.message.toString()) }
                     .map { it.map { stObjectLocalModel -> mapper.toDomainModel(stObjectLocalModel) } }
-
 }

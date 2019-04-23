@@ -7,8 +7,8 @@ import lv.st.sbogdano.domain.gateway.Gateway
 import lv.st.sbogdano.domain.model.StObject
 
 class GetObjectByNameUseCase(
-        schedulers: Schedulers,
-        private val gateway: Gateway
+    schedulers: Schedulers,
+    private val gateway: Gateway
 ) : ObservableUseCase<String, List<StObject>>(schedulers) {
 
     override fun buildObservable(params: String?): Observable<List<StObject>> {

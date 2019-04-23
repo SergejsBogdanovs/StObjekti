@@ -1,10 +1,13 @@
 package lv.st.sbogdano.stobjekti.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import lv.st.sbogdano.domain.model.StObject
@@ -12,7 +15,7 @@ import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.ActivityObjectDetailBinding
 import lv.st.sbogdano.stobjekti.internal.util.driveToObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
-import lv.st.sbogdano.stobjekti.internal.util.lksToLatLon
+import lv.st.sbogdano.stobjekti.internal.util.lksToLatLng
 import lv.st.sbogdano.stobjekti.navigation.Navigator
 import org.koin.android.ext.android.inject
 
@@ -44,7 +47,7 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(map: GoogleMap?) {
-        val coordinates = lksToLatLon(stObject.x.toDouble(), stObject.y.toDouble())
+        val coordinates = lksToLatLng(stObject.x.toDouble(), stObject.y.toDouble())
         val latLng = LatLng(coordinates[0], coordinates[1])
         map?.addMarker(MarkerOptions()
                 .position(latLng)
@@ -53,7 +56,7 @@ class ObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId) {
+        when (item?.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 return true

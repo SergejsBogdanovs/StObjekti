@@ -7,7 +7,7 @@ import android.view.View
 import lv.st.sbogdano.domain.model.StObject
 
 fun View.driveToObject(item: StObject) {
-    val latLng = lksToLatLon(item.x.toDouble(), item.y.toDouble())
+    val latLng = lksToLatLng(item.x.toDouble(), item.y.toDouble())
     val geoLocation = Uri.parse("geo:${latLng[0]},${latLng[1]}")
     showMap(this.context, geoLocation)
 }

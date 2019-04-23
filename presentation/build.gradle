@@ -23,6 +23,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            useProguard false
+        }
     }
 
     dataBinding {
@@ -81,12 +85,16 @@ dependencies {
     implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
     implementation "com.google.firebase:firebase-perf:$rootProject.performanceVersion"
     implementation "com.google.firebase:firebase-messaging:$rootProject.fcmVersion"
+    implementation "com.google.android.gms:play-services-maps:$rootProject.mapsVersion"
 
     // Timber
-    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+    debugImplementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     // Stetho
-    implementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+    debugImplementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"
@@ -96,7 +104,6 @@ dependencies {
     // Instrumentation tests
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
     androidTestImplementation "androidx.annotation:annotation:$rootProject.annotationVersion"
-    implementation 'com.google.android.gms:play-services-maps:16.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

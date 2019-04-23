@@ -5,7 +5,7 @@ import lv.st.sbogdano.domain.model.StObject
 
 class GatewayMapper {
 
-    fun toDomainModel(stObjectLocalModel: StObjectLocalModel) =  StObject(
+    fun toDomainModel(stObjectLocalModel: StObjectLocalModel) = StObject(
         stObjectLocalModel.address,
         stObjectLocalModel.construction,
         stObjectLocalModel.year_of_manufacture,

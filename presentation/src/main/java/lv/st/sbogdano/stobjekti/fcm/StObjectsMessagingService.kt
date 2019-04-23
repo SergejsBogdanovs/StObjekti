@@ -13,14 +13,14 @@ import com.google.firebase.messaging.RemoteMessage
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.main.MainActivity
 
-class StObjectsMessagingService: FirebaseMessagingService() {
+class StObjectsMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
         super.onMessageReceived(remoteMessage)
         createNotificationChannel()
         remoteMessage?.let {
-            val title = it.notification?.title?: "Backup title"
-            val message = it.notification?.body?: "Backup message"
+            val title = it.notification?.title ?: "Backup title"
+            val message = it.notification?.body ?: "Backup message"
             sendNotification(title, message)
         }
     }

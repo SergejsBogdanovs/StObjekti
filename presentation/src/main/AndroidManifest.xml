@@ -46,7 +46,7 @@
             android:authorities="lv.st.sbogdano.stobjekti.search.provider.StObjectsSuggestionProvider"
             android:exported="false"/>
 
-        <service android:name=".fcm.StObjectsMessagingService">
+        <service android:name=".fcm.StObjectsMessagingService" android:permission="">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

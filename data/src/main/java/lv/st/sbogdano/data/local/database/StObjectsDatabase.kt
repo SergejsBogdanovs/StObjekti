@@ -17,5 +17,4 @@ abstract class StObjectsDatabase : RoomDatabase() {
             return Room.databaseBuilder(context, StObjectsDatabase::class.java, "stobjects.db").build()
         }
     }
-
 }
