@@ -1,10 +1,10 @@
-//package lv.st.sbogdano.stobjekti.internal.util
+// package lv.st.sbogdano.stobjekti.internal.util
 //
-//import android.view.View
-//import androidx.core.view.ViewCompat
-//import androidx.core.view.ViewPropertyAnimatorListenerAdapter
+// import android.view.View
+// import androidx.core.view.ViewCompat
+// import androidx.core.view.ViewPropertyAnimatorListenerAdapter
 //
-//fun View.fade(show: Boolean) {
+// fun View.fade(show: Boolean) {
 //
 //    ViewCompat.animate(this).cancel()
 //
@@ -29,4 +29,4 @@
 //                    }).start()
 //        }
 //    }
-//}
+// }

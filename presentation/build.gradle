@@ -93,8 +93,9 @@ dependencies {
     // Stetho
     debugImplementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    // LeakCanary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakCanaryVersion"
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"

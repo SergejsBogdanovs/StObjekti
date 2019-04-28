@@ -4,6 +4,14 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/sbogdano/Library/Mobile Documents/com~apple~CloudDocs/Android/Keys/st_objects_release_key')
+            storePassword 'exodium87'
+            keyAlias = 'key'
+            keyPassword 'exodium87'
+        }
+    }
     compileSdkVersion rootProject.android.compileSdk
 
     defaultConfig {

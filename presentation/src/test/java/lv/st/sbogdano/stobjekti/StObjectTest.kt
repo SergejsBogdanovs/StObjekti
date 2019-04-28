@@ -1,26 +1,26 @@
-//package lv.st.sbogdano.stobjekti
+// package lv.st.sbogdano.stobjekti
 //
-//import android.app.Application
-//import android.content.Context
-//import io.reactivex.Observable
-//import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
-//import lv.st.sbogdano.domain.model.StObject
-//import lv.st.sbogdano.stobjekti.search.StObjectsSearchViewModel
-//import org.hamcrest.MatcherAssert.assertThat
-//import org.hamcrest.core.Is.`is`
-//import org.junit.Before
-//import org.junit.Test
-//import org.junit.runner.RunWith
-//import org.koin.standalone.inject
-//import org.koin.test.KoinTest
-//import org.mockito.Mock
-//import org.mockito.Mockito.`when`
-//import org.mockito.junit.MockitoJUnitRunner
+// import android.app.Application
+// import android.content.Context
+// import io.reactivex.Observable
+// import lv.st.sbogdano.domain.interactor.GetObjectByNameUseCase
+// import lv.st.sbogdano.domain.model.StObject
+// import lv.st.sbogdano.stobjekti.search.StObjectsSearchViewModel
+// import org.hamcrest.MatcherAssert.assertThat
+// import org.hamcrest.core.Is.`is`
+// import org.junit.Before
+// import org.junit.Test
+// import org.junit.runner.RunWith
+// import org.koin.standalone.inject
+// import org.koin.test.KoinTest
+// import org.mockito.Mock
+// import org.mockito.Mockito.`when`
+// import org.mockito.junit.MockitoJUnitRunner
 //
-//@Suppress("IllegalIdentifier")
-//@RunWith(MockitoJUnitRunner::class)
+// @Suppress("IllegalIdentifier")
+// @RunWith(MockitoJUnitRunner::class)
 //
-//class StObjectTest : KoinTest {
+// class StObjectTest : KoinTest {
 //
 //    @Mock
 //    private lateinit var context: Context
@@ -64,4 +64,4 @@
 //        // Should
 //        assertThat(stObjectsSearchViewModel.result, `is`(items))
 //    }
-//}
+// }
