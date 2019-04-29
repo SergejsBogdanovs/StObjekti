@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.detail.ObjectDetailActivity
+import lv.st.sbogdano.stobjekti.main.PrivacyPolicyActivity
 
 class Navigator {
 
@@ -14,6 +15,11 @@ class Navigator {
     fun navigateToObjectDetails(activity: Activity, stObject: StObject) {
         val intent = Intent(activity, ObjectDetailActivity::class.java)
         intent.putExtra(EXTRA_ST_OBJECT, stObject)
+        activity.startActivity(intent)
+    }
+
+    fun navigateToPrivacyPolicy(activity: Activity) {
+        val intent = Intent(activity, PrivacyPolicyActivity::class.java)
         activity.startActivity(intent)
     }
 

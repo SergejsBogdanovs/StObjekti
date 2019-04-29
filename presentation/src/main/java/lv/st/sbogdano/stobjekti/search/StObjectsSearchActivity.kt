@@ -43,7 +43,6 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
         setSupportActionBar(binder.toolbar)
         supportActionBar!!.apply {
             setDisplayHomeAsUpEnabled(true)
-            setDisplayShowTitleEnabled(false)
         }
     }
 

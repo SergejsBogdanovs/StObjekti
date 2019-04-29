@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ST Objekti</string>
     <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
+    <string name="search_results">Meklēšanas rezultāti</string>
 
     <!-- Search -->
     <string name="search_hint">Piemēram as105, tp2030, sp10, fp31</string>
@@ -20,5 +21,9 @@
     <string name="year_of_manufacture_label">Izbuves gads:</string>
     <string name="in_service_from_label">Ekspluatacija no:</string>
     <string name="logo_content_description">Logo</string>
+
+    <!-- Menu -->
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="clear_search_history">Izdzēst meklēšanas vēsturi.</string>
 
 </resources>

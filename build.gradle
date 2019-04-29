@@ -57,6 +57,7 @@ buildscript {
         fcmVersion = '17.6.0'
         mapsVersion = '16.1.0'
         leakCanaryVersion = "1.6.3"
+        markdownVersion = "1.0.8"
 
         // Testing
         jUnitVersion = '4.12'
