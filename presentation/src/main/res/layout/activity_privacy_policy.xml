@@ -7,7 +7,7 @@
     tools:context=".main.PrivacyPolicyActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_privacy_policy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
@@ -18,14 +18,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.mukesh.MarkdownView
-        android:id="@+id/privacy_policy_tv"
+        android:id="@+id/markdownview_privacy_policy"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_privacy_policy"
         app:layout_constraintVertical_bias="0.0">
 
     </com.mukesh.MarkdownView>

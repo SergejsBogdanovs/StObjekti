@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".detail.ObjectDetailActivity">
+    tools:context=".detail.StObjectDetailActivity">
 
     <data>
 
@@ -17,7 +17,7 @@
             android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_stobject_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/primaryColor"
@@ -30,7 +30,7 @@
                 app:titleTextColor="@color/primaryTextColor"/>
 
         <TextView
-                android:id="@+id/technical_object"
+                android:id="@+id/tv_stobject_detail_technical_object"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -40,7 +40,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_stobject_detail"
                 tools:text="33082#TP-7271"/>
 
         <fragment
@@ -52,169 +52,169 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/drive"
+                app:layout_constraintBottom_toTopOf="@+id/btn_stobject_detail_drive"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/in_service_from"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_in_service_from"/>
 
         <Button
-                android:id="@+id/drive"
+                android:id="@+id/btn_stobject_detail_drive"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/drive_btn_label"
+                android:text="@string/all_drive_btn_label"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
-                android:id="@+id/address_label"
+                android:id="@+id/tv_stobject_detail_address_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/address_label"
+                android:text="@string/stobject_detail_address_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/technical_object"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_technical_object"/>
 
         <TextView
-                android:id="@+id/address"
+                android:id="@+id/tv_stobject_detail_address"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.address}"
-                app:layout_constraintBottom_toBottomOf="@+id/address_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_address_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.018"
-                app:layout_constraintStart_toEndOf="@+id/address_label"
-                app:layout_constraintTop_toTopOf="@+id/address_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_address_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_address_label"
                 app:layout_constraintVertical_bias="1.0"
                 tools:text="Ozolnieku skola, Slampes pagasts. Tukuma raj."/>
 
         <TextView
-                android:id="@+id/city_region_label"
+                android:id="@+id/tv_stobject_detail_city_region_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/city_region_label"
+                android:text="@string/stobject_detail_city_region_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_address_label"/>
 
         <TextView
-                android:id="@+id/city_region"
+                android:id="@+id/tv_stobject_detail_city_region"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.city_region}"
-                app:layout_constraintBottom_toBottomOf="@+id/city_region_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_city_region_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/city_region_label"
-                app:layout_constraintTop_toTopOf="@+id/city_region_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_city_region_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_city_region_label"
                 tools:text="Tukuma nov."/>
 
         <TextView
-                android:id="@+id/construction_label"
+                android:id="@+id/tv_stobject_detail_construction_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/construction_label"
+                android:text="@string/stobject_detail_construction_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/city_region_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_city_region_label"/>
 
         <TextView
-                android:id="@+id/construction"
+                android:id="@+id/tv_stobject_detail_construction"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.construction}"
-                app:layout_constraintBottom_toBottomOf="@+id/construction_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_construction_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/construction_label"
-                app:layout_constraintTop_toTopOf="@+id/construction_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_construction_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_construction_label"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="Brīvgaisa vienstatņa balstā ar drošinātājslēdzi..."/>
 
         <TextView
-                android:id="@+id/type_label"
+                android:id="@+id/tv_stobject_detail_type_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/type_label"
+                android:text="@string/stobject_detail_type_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/construction_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_construction_label"/>
 
         <TextView
-                android:id="@+id/type"
+                android:id="@+id/tv_stobject_detail_type"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.type}"
-                app:layout_constraintBottom_toBottomOf="@+id/type_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_type_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/type_label"
-                app:layout_constraintTop_toTopOf="@+id/type_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_type_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_type_label"
                 tools:text="Masta a.st. 20 kV"/>
 
         <TextView
-                android:id="@+id/year_of_manufacture_label"
+                android:id="@+id/tv_stobject_detail_year_of_manufacture_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/year_of_manufacture_label"
+                android:text="@string/stobject_detail_year_of_manufacture_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/type_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_type_label"/>
 
         <TextView
-                android:id="@+id/year_of_manufacture"
+                android:id="@+id/tv_stobject_detail_year_of_manufacture"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.year_of_manufacture}"
-                app:layout_constraintBottom_toBottomOf="@+id/year_of_manufacture_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/year_of_manufacture_label"
-                app:layout_constraintTop_toTopOf="@+id/year_of_manufacture_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_year_of_manufacture_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_year_of_manufacture_label"
                 tools:text="2008"/>
 
         <TextView
-                android:id="@+id/in_service_from_label"
+                android:id="@+id/tv_stobject_detail_in_service_from_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/in_service_from_label"
+                android:text="@string/stobject_detail_in_service_from_label"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/year_of_manufacture_label"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label"/>
 
         <TextView
-                android:id="@+id/in_service_from"
+                android:id="@+id/tv_stobject_detail_in_service_from"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@{stObject.in_service_from}"
-                app:layout_constraintBottom_toBottomOf="@+id/in_service_from_label"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_in_service_from_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/in_service_from_label"
-                app:layout_constraintTop_toTopOf="@+id/in_service_from_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_in_service_from_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_in_service_from_label"
                 tools:text="30.10.2008"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

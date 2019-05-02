@@ -21,7 +21,7 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_stobject_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/primaryColor"
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/st_objects_rw"
+            android:id="@+id/rw_stobjects_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -44,27 +44,27 @@
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_stobject_search"
             app:showLongMessage="@{viewModel.error}"
             app:stobjectAdapter="@{viewModel.result}"
             app:stobjectCallbacks="@{stobjectCallbacks}"
-            tools:listitem="@layout/stobject_list_item" />
+            tools:listitem="@layout/item_stobject" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/pb_stobjects_search"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:goneUnless="@{viewModel.loading}"
-            app:layout_constraintBottom_toBottomOf="@+id/st_objects_rw"
+            app:layout_constraintBottom_toBottomOf="@+id/rw_stobjects_search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/st_objects_rw" />
+            app:layout_constraintTop_toTopOf="@+id/rw_stobjects_search" />
 
         <!--Empty state-->
         <LinearLayout
-            android:id="@+id/view_empty"
+            android:id="@+id/ll_stobjects_search_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -74,15 +74,15 @@
             android:orientation="vertical"
             app:goneUnless="@{viewModel.empty}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/st_objects_rw"
-            app:layout_constraintStart_toStartOf="@+id/st_objects_rw"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/rw_stobjects_search"
+            app:layout_constraintStart_toStartOf="@+id/rw_stobjects_search"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_stobject_search"
             tools:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/empty_icon"
+                android:text="@string/stobjects_search_viewmodel_empty_icon"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView

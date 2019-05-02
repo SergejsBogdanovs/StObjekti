@@ -32,7 +32,7 @@
 
         <activity
                 android:name=".search.StObjectsSearchActivity"
-                android:label="@string/search_results"
+                android:label="@string/stobjects_search_label"
                 android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
@@ -47,7 +47,7 @@
                     android:value=".main.MainActivity"/>
         </activity>
 
-        <activity android:name=".detail.ObjectDetailActivity">
+        <activity android:name=".detail.StObjectDetailActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value=".search.StObjectsSearchActivity"/>
@@ -55,7 +55,7 @@
 
         <activity
                 android:name=".main.PrivacyPolicyActivity"
-                android:label="@string/privacy_policy">
+                android:label="@string/main_menu_privacy_policy_title">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value=".main.MainActivity"/>

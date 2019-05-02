@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <data>
+
+        <variable
+            name="stObject"
+            type="lv.st.sbogdano.domain.model.StObject" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stobject_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item_stobject_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{stObject.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_stobject_city_region"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_stobject_city_region"
+            tools:text="A/st.105" />
+
+        <TextView
+            android:id="@+id/tv_item_stobject_city_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{stObject.city_region}"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_item_stobject_drive"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/btn_item_stobject_drive"
+            tools:text="Tukuma nov." />
+
+        <Button
+            android:id="@+id/btn_item_stobject_drive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/all_drive_btn_label"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_stobject_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_stobject_name" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

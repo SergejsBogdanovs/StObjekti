@@ -49,15 +49,15 @@ class StObjectsSearchViewModel(
                     when (e) {
                         is IllegalArgumentException -> {
                             empty.set(true)
-                            message.set(context.getString(R.string.object_not_found_msg))
+                            message.set(context.getString(R.string.stobjects_search_viewmodel_object_not_found_msg))
                         }
                         is TimeoutException -> {
                             empty.set(true)
-                            message.set(context.getString(R.string.no_internet_connection_msg))
+                            message.set(context.getString(R.string.stobjects_search_viewmodel_no_internet_connection_msg))
                         }
                         else -> error.set(
                             e.localizedMessage ?: e.message
-                            ?: context.getString(R.string.unknown_error)
+                            ?: context.getString(R.string.stobjects_search_viewmodel_unknown_error)
                         )
                     }
                 }

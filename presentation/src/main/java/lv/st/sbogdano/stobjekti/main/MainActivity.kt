@@ -23,10 +23,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_main)
 
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-        search.apply {
+        searchview_main.apply {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
             setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
         }
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.main, menu)
+        inflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
@@ -53,9 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showPrivacyPolicy() {
-        navigator.navigateToPrivacyPolicy(this)
-    }
+    private fun showPrivacyPolicy() = navigator.navigateToPrivacyPolicy(this)
 
     private fun clearSearchHistory() {
         SearchRecentSuggestions(this, StObjectsSuggestionProvider.AUTHORITY, StObjectsSuggestionProvider.MODE)

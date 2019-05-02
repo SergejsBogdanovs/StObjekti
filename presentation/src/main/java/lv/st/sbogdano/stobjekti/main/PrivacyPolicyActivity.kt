@@ -14,11 +14,11 @@ class PrivacyPolicyActivity : AppCompatActivity() {
 
         setupToolbar()
 
-        privacy_policy_tv.loadMarkdownFromAssets("privacy_policy.md")
+        markdownview_privacy_policy.loadMarkdownFromAssets("privacy_policy.md")
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_privacy_policy)
         supportActionBar!!.apply {
             setDisplayHomeAsUpEnabled(true)
         }

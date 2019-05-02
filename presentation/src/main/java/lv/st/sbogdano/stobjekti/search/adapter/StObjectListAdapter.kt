@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
-import lv.st.sbogdano.stobjekti.databinding.StobjectListItemBinding
+import lv.st.sbogdano.stobjekti.databinding.ItemStobjectBinding
 
 class StObjectListAdapter(
     private val items: List<StObject>,
@@ -21,7 +21,7 @@ class StObjectListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding: StobjectListItemBinding = DataBindingUtil.inflate(inflater, R.layout.stobject_list_item, parent, false)
+        val binding: ItemStobjectBinding = DataBindingUtil.inflate(inflater, R.layout.item_stobject, parent, false)
         return ViewHolder(binding)
     }
 
@@ -32,10 +32,10 @@ class StObjectListAdapter(
         holder.binding.executePendingBindings()
     }
 
-    inner class ViewHolder(val binding: StobjectListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemStobjectBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener { callback?.onItemClick(it, items[adapterPosition]) }
-            binding.driveBtn.setOnClickListener { callback?.onDriveBtnClick(it, items[adapterPosition]) }
+            binding.btnItemStobjectDrive.setOnClickListener { callback?.onDriveBtnClick(it, items[adapterPosition]) }
         }
     }
 }

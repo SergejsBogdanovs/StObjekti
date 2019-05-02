@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
@@ -16,15 +16,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/search"
+        android:id="@+id/searchview_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="@+id/st_logo"
-        app:layout_constraintStart_toStartOf="@+id/st_logo" />
+        app:layout_constraintEnd_toEndOf="@+id/imageview_main_st_logo"
+        app:layout_constraintStart_toStartOf="@+id/imageview_main_st_logo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -34,17 +34,17 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/st_logo"
+        android:id="@+id/imageview_main_st_logo"
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:adjustViewBounds="false"
-        android:contentDescription="@string/logo_content_description"
+        android:contentDescription="@string/main_logo_content_description"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintBottom_toTopOf="@+id/searchview_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sadales" />

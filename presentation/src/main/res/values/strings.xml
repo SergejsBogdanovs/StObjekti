@@ -1,29 +1,33 @@
 <resources>
     <string name="app_name">ST Objekti</string>
     <string name="google_maps_api_key">AIzaSyCDh5jdKjpx8j5uFSO-jcWjb1OvWBi3GdI</string>
-    <string name="search_results">Meklēšanas rezultāti</string>
 
-    <!-- Search -->
-    <string name="search_hint">Piemēram as105, tp2030, sp10, fp31</string>
+    <!-- All -->
+    <string name="all_drive_btn_label">Braukt</string>
 
-    <!-- Messages-->
-    <string name="unknown_error">Unknown error</string>
-    <string name="empty_icon">¯\\\\_(ツ)_/¯</string>
-    <string name="object_not_found_msg">Objekts nav atrasts! Pārbaudiet objekta nosaukumu.</string>
-    <string name="no_internet_connection_msg">Problemas ar interneta savienojumu.</string>
+    <!-- Main -->
+    <string name="main_search_hint">Piemēram as105, tp2030, sp10, fp31</string>
+    <string name="main_logo_content_description">Logo</string>
 
-    <!-- Labels -->
-    <string name="drive_btn_label">Braukt</string>
-    <string name="address_label">Adrese:</string>
-    <string name="city_region_label">Pilsēta/Reģions:</string>
-    <string name="construction_label">Konstrukcija:</string>
-    <string name="type_label">Tips:</string>
-    <string name="year_of_manufacture_label">Izbuves gads:</string>
-    <string name="in_service_from_label">Ekspluatacija no:</string>
-    <string name="logo_content_description">Logo</string>
+    <!-- Stobjects search -->
+    <string name="stobjects_search_label">Meklēšanas rezultāti</string>
+
+    <!-- Stobjects search viewmodel-->
+    <string name="stobjects_search_viewmodel_unknown_error">Unknown error</string>
+    <string name="stobjects_search_viewmodel_empty_icon">¯\\\\_(ツ)_/¯</string>
+    <string name="stobjects_search_viewmodel_object_not_found_msg">Objekts nav atrasts! Pārbaudiet objekta nosaukumu.</string>
+    <string name="stobjects_search_viewmodel_no_internet_connection_msg">Problēmas ar interneta savienojumu.</string>
+
+    <!-- Stobject detail -->
+    <string name="stobject_detail_address_label">Adrese:</string>
+    <string name="stobject_detail_city_region_label">Pilsēta/Reģions:</string>
+    <string name="stobject_detail_construction_label">Konstrukcija:</string>
+    <string name="stobject_detail_type_label">Tips:</string>
+    <string name="stobject_detail_year_of_manufacture_label">Izbuves gads:</string>
+    <string name="stobject_detail_in_service_from_label">Ekspluatacija no:</string>
 
     <!-- Menu -->
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="clear_search_history">Izdzēst meklēšanas vēsturi.</string>
+    <string name="main_menu_privacy_policy_title">Privacy Policy</string>
+    <string name="main_menu_clear_search_history_title">Izdzēst meklēšanas vēsturi.</string>
 
 </resources>

@@ -8,9 +8,10 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import kotlinx.android.synthetic.main.activity_stobjects_search.*
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
-import lv.st.sbogdano.stobjekti.databinding.ActivityStObjectsSearchBinding
+import lv.st.sbogdano.stobjekti.databinding.ActivityStobjectsSearchBinding
 import lv.st.sbogdano.stobjekti.internal.util.driveToObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
 import lv.st.sbogdano.stobjekti.navigation.Navigator
@@ -25,8 +26,8 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
 
     private val navigator: Navigator by inject()
 
-    private val binder by lazyThreadSafetyNone<ActivityStObjectsSearchBinding> {
-        DataBindingUtil.setContentView(this, R.layout.activity_st_objects_search)
+    private val binder by lazyThreadSafetyNone<ActivityStobjectsSearchBinding> {
+        DataBindingUtil.setContentView(this, R.layout.activity_stobjects_search)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +41,7 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(binder.toolbar)
+        setSupportActionBar(toolbar_stobject_search)
         supportActionBar!!.apply {
             setDisplayHomeAsUpEnabled(true)
         }
@@ -61,13 +62,10 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
         }
     }
 
-    override fun onItemClick(view: View, item: StObject) {
+    override fun onItemClick(view: View, item: StObject) =
         navigator.navigateToObjectDetails(this@StObjectsSearchActivity, item)
-    }
 
-    override fun onDriveBtnClick(view: View, item: StObject) {
-        view.driveToObject(item)
-    }
+    override fun onDriveBtnClick(view: View, item: StObject) = view.driveToObject(item)
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {

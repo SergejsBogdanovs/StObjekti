@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_privacy"
-        android:title="@string/privacy_policy"
+        android:title="@string/main_menu_privacy_policy_title"
         android:titleCondensed=""/>
     <item
         android:id="@+id/action_clear_search_history"
-        android:title="@string/clear_search_history" />
+        android:title="@string/main_menu_clear_search_history_title" />
 </menu>
