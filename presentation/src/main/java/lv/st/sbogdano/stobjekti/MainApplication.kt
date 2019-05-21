@@ -23,8 +23,6 @@ class MainApplication : Application() {
         }
         LeakCanary.install(this)
 
-        MultiDex.install(this)
-
         // Start Koin
         startKoin {
             androidLogger()

@@ -14,14 +14,10 @@ abstract class BaseAndroidViewModel(
     private val compositeDisposable = CompositeDisposable()
 
     fun addDisposable(disposable: Disposable) {
-        compositeDisposable += disposable
+        compositeDisposable.add(disposable)
     }
 
     override fun onCleared() {
         compositeDisposable.dispose()
     }
-}
-
-private operator fun CompositeDisposable.plusAssign(disposable: Disposable) {
-    this.add(disposable)
 }
