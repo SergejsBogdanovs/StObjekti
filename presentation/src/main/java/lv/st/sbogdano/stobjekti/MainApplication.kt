@@ -1,7 +1,6 @@
 package lv.st.sbogdano.stobjekti
 
 import android.app.Application
-import androidx.multidex.MultiDex
 import com.squareup.leakcanary.LeakCanary
 import lv.st.sbogdano.stobjekti.internal.injection.dataModule
 import lv.st.sbogdano.stobjekti.internal.injection.domainModule
