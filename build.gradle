@@ -50,7 +50,7 @@ buildscript {
         firebaseCoreVersion = '16.0.9'
         firebaseDatabaseVersion = '17.0.0'
         rxFirebaseVersion = '1.5.6'
-        koinVersion = '2.0.0-rc-2'
+        koinVersion = '2.0.0'
         coroutinesVersion = '1.0.0'
         crashlyticsVersion = '2.10.0'
         performanceVersion = '17.0.0'
