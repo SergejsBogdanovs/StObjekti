@@ -52,7 +52,7 @@ buildscript {
         rxFirebaseVersion = '1.5.6'
         koinVersion = '2.0.0'
         coroutinesVersion = '1.0.0'
-        crashlyticsVersion = '2.10.0'
+        crashlyticsVersion = '2.10.1'
         performanceVersion = '17.0.0'
         fcmVersion = '18.0.0'
         mapsVersion = '16.1.0'
