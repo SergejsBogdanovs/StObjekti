@@ -18,9 +18,25 @@ android {
         multiDexEnabled true
     }
 
+    def keystorePropertiesFile = file("keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+
+    signingConfigs {
+        release {
+            storeFile file("st_objects_release_key.keystore")
+            storePassword keystoreProperties['releasePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['releasePassword']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 

@@ -27,8 +27,8 @@ buildscript {
 
         application = [
                 id                       : 'lv.st.sbogdano.stobjekti',
-                versionCode              : 4,
-                versionName              : "1.0.0-alpha04",
+                versionCode              : 6,
+                versionName              : "1.0.0-alpha01",
                 testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner"
         ]
 
