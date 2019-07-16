@@ -8,7 +8,7 @@ buildscript {
                 java  : '1.8',
                 kotlin: '1.3.41',
                 ktlint: '0.31.0',
-                androidPlugin: '3.4.1',
+                androidPlugin: '3.4.2',
                 googleServices: '4.2.0',
                 crashlytics: '1.26.1',
                 firebasePlugins: '1.2.0'
