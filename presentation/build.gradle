@@ -117,8 +117,8 @@ dependencies {
 
     // Unit tests
     testImplementation "junit:junit:$rootProject.jUnitVersion"
-//    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
-//    testImplementation "org.koin:koin-test:$rootProject.kointTestVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testImplementation "org.koin:koin-test:$rootProject.kointTestVersion"
 
     // Instrumentation tests
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"

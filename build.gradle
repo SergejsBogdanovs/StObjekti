@@ -64,7 +64,7 @@ buildscript {
         espressoVersion = '3.2.0-alpha04'
         annotationVersion = '1.1.0-beta01'
         mockitoVersion = '2.25.1'
-        kointTestVersion = '1.0.1'
+        kointTestVersion = '2.0.1'
     }
 
     repositories {
