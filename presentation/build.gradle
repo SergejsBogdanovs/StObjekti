@@ -65,7 +65,7 @@ dependencies {
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.compiler.kotlin"
-    implementation "androidx.core:core-ktx:$rootProject.androidKtxVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
 
     // UI
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
