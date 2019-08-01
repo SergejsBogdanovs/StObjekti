@@ -2,7 +2,7 @@ package lv.st.sbogdano.data.utils
 
 fun getFormattedName(name: String): String {
 
-    val regexAS = """(as\s|a/st\.\s|as|a/st\.|a/st)""".toRegex(RegexOption.IGNORE_CASE)
+    val regexAS = """(as\.|as\s|a/st\.\s|as|a/st\.|a/st)""".toRegex(RegexOption.IGNORE_CASE)
     val regexTP = """(tp\s|tp-|tp_|tp)""".toRegex(RegexOption.IGNORE_CASE)
     val regexSP = """(sp\s|sp-|sp_|sp)""".toRegex(RegexOption.IGNORE_CASE)
     val regexFP = """(fp\s|fp-|fp_|fp)""".toRegex(RegexOption.IGNORE_CASE)
