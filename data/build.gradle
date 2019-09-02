@@ -12,7 +12,7 @@ android {
         versionCode rootProject.application.versionCode
         versionName rootProject.application.versionName
         testInstrumentationRunner rootProject.application.testInstrumentationRunner
-        multiDexEnabled true
+        //multiDexEnabled true
     }
 
     buildTypes {

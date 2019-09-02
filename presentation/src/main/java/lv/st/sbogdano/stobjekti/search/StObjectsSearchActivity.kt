@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_stobjects_search.*
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.ActivityStobjectsSearchBinding
-import lv.st.sbogdano.stobjekti.internal.util.driveToObject
+import lv.st.sbogdano.stobjekti.internal.util.driveToStObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
 import lv.st.sbogdano.stobjekti.navigation.Navigator
 import lv.st.sbogdano.stobjekti.search.adapter.StObjectListAdapter
@@ -65,7 +65,7 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
     override fun onItemClick(view: View, item: StObject) =
         navigator.navigateToObjectDetails(this@StObjectsSearchActivity, item)
 
-    override fun onDriveBtnClick(view: View, item: StObject) = view.driveToObject(item)
+    override fun onDriveBtnClick(view: View, item: StObject) = view.driveToStObject(item)
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {

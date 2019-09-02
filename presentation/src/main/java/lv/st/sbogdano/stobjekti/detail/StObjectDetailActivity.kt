@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_stobject_detail.*
 import lv.st.sbogdano.domain.model.StObject
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.databinding.ActivityStobjectDetailBinding
-import lv.st.sbogdano.stobjekti.internal.util.driveToObject
+import lv.st.sbogdano.stobjekti.internal.util.driveToStObject
 import lv.st.sbogdano.stobjekti.internal.util.lazyThreadSafetyNone
 import lv.st.sbogdano.stobjekti.internal.util.lksToLatLng
 import lv.st.sbogdano.stobjekti.navigation.Navigator
@@ -38,7 +38,7 @@ class StObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
         setupToolbar()
 
-        btn_stobject_detail_drive.setOnClickListener { it.driveToObject(stObject) }
+        btn_stobject_detail_drive.setOnClickListener { it.driveToStObject(stObject) }
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)

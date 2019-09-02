@@ -15,7 +15,7 @@ android {
         versionCode rootProject.application.versionCode
         versionName rootProject.application.versionName
         testInstrumentationRunner rootProject.application.testInstrumentationRunner
-        multiDexEnabled true
+//        multiDexEnabled true
     }
 
     def keystorePropertiesFile = file("keystore.properties")
@@ -75,11 +75,11 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
 
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycleVersion"
 
     // Room
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
@@ -88,7 +88,7 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$rootProject.koinVersion"
 
     // Multidex
-    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
+//    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"

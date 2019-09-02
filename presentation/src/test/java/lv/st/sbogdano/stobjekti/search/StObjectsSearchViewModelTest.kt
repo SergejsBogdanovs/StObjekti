@@ -19,7 +19,7 @@ import java.util.concurrent.TimeoutException
 
 @Suppress("IllegalIdentifier")
 @RunWith(MockitoJUnitRunner::class)
-class StObjectTest : KoinTest {
+class StObjectsSearchViewModelTest : KoinTest {
 
     @Mock
     private lateinit var context: Context
@@ -76,7 +76,7 @@ class StObjectTest : KoinTest {
     fun `Given empty StObjects list, When load empty stObjects, Should update empty`() {
 
         // Given
-        val stObjects = listOf<StObject>()
+        val stObjects = emptyList<StObject>()
 
         `when`(getObjectByNameUseCase.execute(stObjectName)).thenReturn(Observable.just(stObjects))
 
