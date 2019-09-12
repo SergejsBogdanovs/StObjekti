@@ -15,6 +15,7 @@ class GatewayMapper {
         stObjectLocalModel.technical_object,
         stObjectLocalModel.type,
         stObjectLocalModel.x,
-        stObjectLocalModel.y
+        stObjectLocalModel.y,
+        stObjectLocalModel.zone_of_responsibility
     )
 }

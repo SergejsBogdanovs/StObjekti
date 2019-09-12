@@ -46,7 +46,8 @@ class GetObjectByNameTest {
                 "technical_object",
                 "type",
                 "x",
-                "y"
+                "y",
+                "zone_of_responsibility: String"
             )
         )
 

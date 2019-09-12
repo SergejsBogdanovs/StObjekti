@@ -12,210 +12,234 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_stobject_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/primaryColor"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/ToolbarTheme"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="@{stObject.name}"
-                app:titleTextColor="@color/primaryTextColor"/>
+            android:id="@+id/toolbar_stobject_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryColor"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{stObject.name}"
+            app:titleTextColor="@color/primaryTextColor" />
 
         <TextView
-                android:id="@+id/tv_stobject_detail_technical_object"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.technical_object}"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar_stobject_detail"
-                tools:text="33082#TP-7271"/>
+            android:id="@+id/tv_stobject_detail_technical_object"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.technical_object}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_stobject_detail"
+            tools:text="33082#TP-7271" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/stobject_detail_address_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_technical_object" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_address"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.address}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_address_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.018"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_address_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_address_label"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Ozolnieku skola, Slampes pagasts. Tukuma raj." />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_city_region_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_city_region_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_address_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_city_region"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.city_region}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_city_region_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_city_region_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_city_region_label"
+            tools:text="Tukuma nov." />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_construction_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_construction_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_city_region_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_construction"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.construction}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_construction_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_construction_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_construction_label"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Brīvgaisa vienstatņa balstā ar drošinātājslēdzi..." />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_type_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_construction_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_type"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.type}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_type_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_type_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_type_label"
+            tools:text="Masta a.st. 20 kV" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_year_of_manufacture_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_year_of_manufacture_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_type_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_year_of_manufacture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.year_of_manufacture}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_year_of_manufacture_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_year_of_manufacture_label"
+            tools:text="2008" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_in_service_from_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_in_service_from_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_in_service_from"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.in_service_from}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_in_service_from_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_in_service_from_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_in_service_from_label"
+            tools:text="30.10.2008" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_zone_of_responsibility_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_in_service_from_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_zone_of_responsibility"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.zone_of_responsibility}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            tools:text="32056 Sigulda-6 PR" />
 
         <fragment
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/btn_stobject_detail_drive"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_in_service_from"/>
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_stobject_detail_drive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_zone_of_responsibility_label" />
 
         <Button
-                android:id="@+id/btn_stobject_detail_drive"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/all_drive_btn_label"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_address_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/stobject_detail_address_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_technical_object"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_address"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.address}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_address_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.018"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_address_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_address_label"
-                app:layout_constraintVertical_bias="1.0"
-                tools:text="Ozolnieku skola, Slampes pagasts. Tukuma raj."/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_city_region_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/stobject_detail_city_region_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_address_label"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_city_region"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.city_region}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_city_region_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_city_region_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_city_region_label"
-                tools:text="Tukuma nov."/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_construction_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/stobject_detail_construction_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_city_region_label"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_construction"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.construction}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_construction_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_construction_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_construction_label"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="Brīvgaisa vienstatņa balstā ar drošinātājslēdzi..."/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_type_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/stobject_detail_type_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_construction_label"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_type"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.type}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_type_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_type_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_type_label"
-                tools:text="Masta a.st. 20 kV"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_year_of_manufacture_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/stobject_detail_year_of_manufacture_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_type_label"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_year_of_manufacture"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.year_of_manufacture}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_year_of_manufacture_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_year_of_manufacture_label"
-                tools:text="2008"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_in_service_from_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/stobject_detail_in_service_from_label"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_year_of_manufacture_label"/>
-
-        <TextView
-                android:id="@+id/tv_stobject_detail_in_service_from"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@{stObject.in_service_from}"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_in_service_from_label"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_in_service_from_label"
-                app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_in_service_from_label"
-                tools:text="30.10.2008"/>
+            android:id="@+id/btn_stobject_detail_drive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/all_drive_btn_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

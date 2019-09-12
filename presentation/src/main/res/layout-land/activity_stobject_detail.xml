@@ -216,6 +216,32 @@
             app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_in_service_from_label"
             tools:text="30.10.2008" />
 
+        <TextView
+            android:id="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/stobject_detail_zone_of_responsibility_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stobject_detail_in_service_from_label" />
+
+        <TextView
+            android:id="@+id/tv_stobject_detail_zone_of_responsibility"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{stObject.zone_of_responsibility}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_stobject_detail_zone_of_responsibility_label"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="32056 Sigulda-6 PR" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"

@@ -6,6 +6,7 @@ fun getFormattedName(name: String): String {
     val regexTP = """(tp\s|tp-|tp_|tp)""".toRegex(RegexOption.IGNORE_CASE)
     val regexSP = """(sp\s|sp-|sp_|sp)""".toRegex(RegexOption.IGNORE_CASE)
     val regexFP = """(fp\s|fp-|fp_|fp)""".toRegex(RegexOption.IGNORE_CASE)
+    val regexKP = """(kp\s|kp-|kp_|kp)""".toRegex(RegexOption.IGNORE_CASE)
     val regexT = """(t\s|t-|t_|t)""".toRegex(RegexOption.IGNORE_CASE)
 
     return when (true) {
@@ -13,6 +14,7 @@ fun getFormattedName(name: String): String {
         name.first().equals('a', true) -> regexAS.replace(name, "A/st.")
         name.first().equals('s', true) -> regexSP.replace(name, "SP")
         name.first().equals('f', true) -> regexFP.replace(name, "FP")
+        name.first().equals('k', true) -> regexKP.replace(name, "KP")
         else -> regexT.replace(name, "T")
     }
 }

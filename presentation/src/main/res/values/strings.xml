@@ -25,6 +25,7 @@
     <string name="stobject_detail_type_label">Tips:</string>
     <string name="stobject_detail_year_of_manufacture_label">Izbuves gads:</string>
     <string name="stobject_detail_in_service_from_label">Ekspluatacija no:</string>
+    <string name="stobject_detail_zone_of_responsibility_label">Atbildības teritorija:</string>
 
     <!-- Menu -->
     <string name="main_menu_privacy_policy_title">Privacy Policy</string>

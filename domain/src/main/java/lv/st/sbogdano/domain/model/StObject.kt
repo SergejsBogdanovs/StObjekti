@@ -12,5 +12,6 @@ data class StObject(
     var technical_object: String = "",
     var type: String = "",
     var x: String = "",
-    var y: String = ""
+    var y: String = "",
+    var zone_of_responsibility: String = ""
 ) : Serializable
