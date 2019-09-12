@@ -9,7 +9,7 @@ import lv.st.sbogdano.stobjekti.main.PrivacyPolicyActivity
 class Navigator {
 
     companion object {
-        private val EXTRA_ST_OBJECT = "${StObjectDetailActivity::class.java.`package`.name}.extra.ST_OBJECT"
+        private val EXTRA_ST_OBJECT = "${StObjectDetailActivity::class.java.`package`?.name}.extra.ST_OBJECT"
     }
 
     fun navigateToObjectDetails(activity: Activity, stObject: StObject) {

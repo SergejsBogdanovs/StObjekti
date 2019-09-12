@@ -64,5 +64,4 @@ class GetObjectByNameTest {
 
         Mockito.verify(gateway).getStObjects(name)
     }
-
 }

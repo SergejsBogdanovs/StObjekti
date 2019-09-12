@@ -133,5 +133,4 @@ class StObjectsSearchViewModelTest : KoinTest {
         // Should
         assertThat(stObjectsSearchViewModel.error.get(), `is`(error.message))
     }
-
 }
