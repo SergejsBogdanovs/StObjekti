@@ -53,8 +53,8 @@ class StObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         val coordinates = lksToLatLng(stObject.x.toDouble(), stObject.y.toDouble())
         val latLng = LatLng(coordinates[0], coordinates[1])
         map?.addMarker(MarkerOptions()
-                .position(latLng)
-                .title(stObject.name))
+            .position(latLng)
+            .title(stObject.name))?.showInfoWindow()
         map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f))
     }
 
