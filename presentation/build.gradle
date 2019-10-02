@@ -39,7 +39,6 @@ android {
         }
 
         debug {
-            useProguard false
             minifyEnabled false
         }
     }
@@ -75,20 +74,14 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
 
     // Lifecycle
-//    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
-//    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
-//    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycleVersion"
 
     // Room
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
 
     // Koin
     implementation "org.koin:koin-androidx-viewmodel:$rootProject.koinVersion"
-
-    // Multidex
-//    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
@@ -103,13 +96,13 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:$rootProject.mapsVersion"
 
     // Timber
-    debugImplementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     // Stetho
-    debugImplementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+    implementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
 
     // LeakCanary
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
+    implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakCanaryVersion"
 
     // Markdown

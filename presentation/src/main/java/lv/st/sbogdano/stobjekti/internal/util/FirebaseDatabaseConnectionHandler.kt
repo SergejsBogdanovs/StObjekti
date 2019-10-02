@@ -2,8 +2,10 @@ package lv.st.sbogdano.stobjekti.internal.util
 
 import android.app.Activity
 import android.app.Application
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseDatabaseConnectionHandler : Application.ActivityLifecycleCallbacks {
@@ -29,7 +31,6 @@ class FirebaseDatabaseConnectionHandler : Application.ActivityLifecycleCallbacks
     override fun onActivityStopped(activity: Activity?) {
         count--
         if (count == 0) {
-
             mHandler.postDelayed({
                 // just make sure that in the defined seconds no other activity is brought to front
                 if (count == 0) {

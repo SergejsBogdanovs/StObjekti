@@ -21,7 +21,6 @@ android {
         }
 
         debug {
-            useProguard false
             minifyEnabled false
         }
     }
