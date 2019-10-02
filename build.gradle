@@ -41,7 +41,7 @@ buildscript {
         firebaseCoreVersion = '17.2.0'
         firebaseDatabaseVersion = '19.1.0'
         koinVersion = '2.0.0'
-        leakCanaryVersion = "1.6.3"
+        leakCanaryVersion = "2.0-beta-3"
         lifecycleVersion = '2.1.0'
         mapsVersion = '17.0.0'
         markdownVersion = "1.0.8"

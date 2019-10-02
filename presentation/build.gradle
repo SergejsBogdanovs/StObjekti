@@ -103,7 +103,6 @@ dependencies {
 
     // LeakCanary
     implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
-    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakCanaryVersion"
 
     // Markdown
     implementation "com.github.mukeshsolanki:MarkdownView-Android:$rootProject.markdownVersion"
