@@ -33,21 +33,15 @@ class MainApplication : Application() {
     }
 
     private fun initLeakCanary() {
-        if (BuildConfig.DEBUG) {
-            AppWatcher.config = AppWatcher.config.copy(watchFragmentViews = false)
-        }
+        AppWatcher.config = AppWatcher.config.copy(watchFragmentViews = false)
     }
 
     private fun initStetho() {
-        if (BuildConfig.DEBUG) {
-            Stetho.initializeWithDefaults(this)
-        }
+        Stetho.initializeWithDefaults(this)
     }
 
     private fun initTimber() {
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
+        Timber.plant(Timber.DebugTree())
     }
 }
 

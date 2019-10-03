@@ -96,13 +96,13 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:$rootProject.mapsVersion"
 
     // Timber
-    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+    debugImplementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     // Stetho
-    implementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+    debugImplementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
 
     // LeakCanary
-    implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
 
     // Markdown
     implementation "com.github.mukeshsolanki:MarkdownView-Android:$rootProject.markdownVersion"

@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import lv.st.sbogdano.data.local.dao.StObjectsDao
 import lv.st.sbogdano.data.local.model.StObjectLocalModel
 
-@Database(entities = [StObjectLocalModel::class], version = 3, exportSchema = false)
+@Database(entities = [StObjectLocalModel::class], version = 1, exportSchema = false)
 abstract class StObjectsDatabase : RoomDatabase() {
 
     abstract fun recentObjectsDao(): StObjectsDao
