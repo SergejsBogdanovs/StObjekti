@@ -29,6 +29,7 @@
 
     <!-- Menu -->
     <string name="main_menu_privacy_policy_title">Privacy Policy</string>
-    <string name="main_menu_clear_search_history_title">Izdzēst meklēšanas vēsturi.</string>
+    <string name="main_menu_clear_search_history_title">Izdzēst meklēšanas vēsturi</string>
+    <string name="main_menu_logout_title">Izlogoties</string>
 
 </resources>

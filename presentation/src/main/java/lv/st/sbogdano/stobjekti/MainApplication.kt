@@ -27,20 +27,13 @@ class MainApplication : Application() {
         // Manage firebase database connection when in background and foreground
         registerActivityLifecycleCallbacks(FirebaseDatabaseConnectionHandler())
 
-        initLeakCanary()
-        initTimber()
-        initStetho()
-    }
-
-    private fun initLeakCanary() {
+        // LeakCanary
         AppWatcher.config = AppWatcher.config.copy(watchFragmentViews = false)
-    }
 
-    private fun initStetho() {
+        // Stetho
         Stetho.initializeWithDefaults(this)
-    }
 
-    private fun initTimber() {
+        // Timber
         Timber.plant(Timber.DebugTree())
     }
 }

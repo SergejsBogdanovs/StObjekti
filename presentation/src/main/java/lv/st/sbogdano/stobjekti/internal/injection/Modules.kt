@@ -1,5 +1,7 @@
 package lv.st.sbogdano.stobjekti.internal.injection
 
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.database.FirebaseDatabase
 import lv.st.sbogdano.data.gateway.GatewayImpl
 import lv.st.sbogdano.data.local.database.StObjectsDatabase
@@ -37,4 +39,6 @@ val presentationModule = module {
     viewModel { StObjectsSearchViewModel(androidContext(), get()) }
 
     single { Navigator() }
+
+    single { FirebaseAuth.getInstance() }
 }

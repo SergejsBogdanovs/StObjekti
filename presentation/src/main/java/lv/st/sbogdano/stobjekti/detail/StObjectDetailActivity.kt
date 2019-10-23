@@ -58,8 +58,8 @@ class StObjectDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f))
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 return true

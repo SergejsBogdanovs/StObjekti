@@ -15,7 +15,6 @@ android {
         versionCode rootProject.application.versionCode
         versionName rootProject.application.versionName
         testInstrumentationRunner rootProject.application.testInstrumentationRunner
-//        multiDexEnabled true
     }
 
     def keystorePropertiesFile = file("keystore.properties")
@@ -91,9 +90,10 @@ dependencies {
     implementation "com.google.firebase:firebase-core:$rootProject.firebaseCoreVersion"
     implementation "com.google.firebase:firebase-database:$rootProject.firebaseDatabaseVersion"
     implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
-    implementation "com.google.firebase:firebase-perf:$rootProject.performanceVersion"
+    implementation "com.google.firebase:firebase-perf:$rootProject.firebasePerformanceVersion"
     implementation "com.google.firebase:firebase-messaging:$rootProject.fcmVersion"
     implementation "com.google.android.gms:play-services-maps:$rootProject.mapsVersion"
+    implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
 
     // Timber
     debugImplementation "com.jakewharton.timber:timber:$rootProject.timberVersion"

@@ -69,8 +69,8 @@ class StObjectsSearchActivity : AppCompatActivity(), StObjectListAdapter.Callbac
 
     override fun onDriveBtnClick(view: View, item: StObject) = view.driveToStObject(item)
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 return true

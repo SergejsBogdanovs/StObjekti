@@ -7,4 +7,7 @@
     <item
         android:id="@+id/action_clear_search_history"
         android:title="@string/main_menu_clear_search_history_title" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/main_menu_logout_title" />
 </menu>

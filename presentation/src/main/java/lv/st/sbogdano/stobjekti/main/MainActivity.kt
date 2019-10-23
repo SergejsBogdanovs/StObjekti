@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import lv.st.sbogdano.stobjekti.R
 import lv.st.sbogdano.stobjekti.navigation.Navigator
@@ -16,10 +17,10 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
+    private val auth: FirebaseAuth by inject()
     private val navigator: Navigator by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -38,15 +39,20 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        return when (item?.itemId) {
+        return when (item.itemId) {
             R.id.action_privacy -> {
                 showPrivacyPolicy()
                 true
             }
             R.id.action_clear_search_history -> {
                 clearSearchHistory()
+                true
+            }
+            R.id.action_logout -> {
+                auth.signOut()
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)
